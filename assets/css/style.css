@@ -315,3 +315,8 @@ em.bu,b.bu{display:inline-block;width:14px;height:14px;border-radius:50%;backgro
 @media (max-width:799px) and (max-height:700px){.sAc span{display:none}.sAl{gap:6px}}
 @media (max-width:799px){#sA{justify-content:flex-start}#sA #vA{margin-top:clamp(132px,19svh,170px)}}
 @media (max-width:799px) and (max-height:700px){#sA .fz{width:165vw}#sA #vA{margin-top:112px}}
+
+/* donor flashcards: pictures from the old site, text kept clear of them */
+.sk .sd>div:last-child{max-width:58%}
+@media (max-width:899px){.sk .sd>div:last-child{max-width:none}}
+@media (min-width:900px){.sk .sdi.co{max-width:36%;max-height:82%}}
