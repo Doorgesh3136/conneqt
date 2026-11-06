@@ -1,0 +1,3 @@
+function numbersBox(r){$(".nbb",r).forEach(function(box){var bs=$("b[data-v]",box),tws=[];bs.forEach(function(b){var p=b.dataset.p||"",su=b.dataset.s||"",o={v:0};b.textContent=p+"0"+su;tws.push(G.to(o,{v:+b.dataset.v,duration:2,ease:"power2.out",paused:true,onUpdate:function(){b.textContent=p+Math.round(o.v)+su}}))});
+ST.create({trigger:box,start:"top 85%",once:true,refreshPriority:-1,onEnter:function(){tws.forEach(function(t){t.play()})}});
+function fin(){tws.forEach(function(t){t.progress(1)})}box.addEventListener("click",fin);box.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();fin()}})})}

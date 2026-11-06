@@ -1,0 +1,19 @@
+.dn2{min-height:100svh;padding:clamp(120px, 13vw, 170px) var(--pad) var(--sec);display:grid;gap:clamp(48px, 6vw, 90px);align-items:center}
+@media (min-width: 1000px){.dn2{grid-template-columns:1.05fr .95fr}}
+.dsteps{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.dsteps span{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font:500 .85rem "DM Mono",monospace;transition:background 0.5s var(--ease),color 0.5s var(--ease)}
+.dsteps span.on{background:var(--ink);color:var(--cream)}
+.dsteps i{width:44px;height:1.5px;background:var(--ink);opacity:.35}
+.dnk{display:block;color:var(--b);margin-bottom:18px}
+.dn2 h1{font-size:clamp(2.6rem, 6vw, 6.2rem);max-width:13ch;margin-bottom:clamp(30px, 4vw, 50px)}
+.dstep{display:grid;gap:28px}
+.dn2 .ctas{justify-self:start;margin-top:6px}
+.dstep>.fl2{margin:6px 0 -14px}
+.dnc{position:relative;width:min(100%, 520px);aspect-ratio:1/1.05;justify-self:center}
+.dnc .dsun{position:absolute;right:2%;top:2%;width:46%;aspect-ratio:1;border-radius:50%;background:var(--sun)}
+.pol{position:absolute;background:#fff;padding:10px 10px 38px;box-shadow:0 18px 40px rgba(27,27,51,0.16),0 2px 6px rgba(27,27,51,0.08)}
+.pol img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 30%}
+.dnc .q1{left:0;top:10%;width:54%;rotate:-6deg}
+.dnc .q2{right:0;top:24%;width:50%;rotate:5deg}
+.dnc .q3{left:22%;bottom:0;width:50%;rotate:-2deg}
+@media (max-width: 999px){.dnc{width:min(88%, 420px)}}

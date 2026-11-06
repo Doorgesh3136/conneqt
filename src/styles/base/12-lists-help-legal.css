@@ -1,0 +1,27 @@
+.bn{list-style:none;margin:0;padding:0}
+.bn li{display:flex;gap:22px;align-items:baseline;border-top:1.5px solid var(--ink);padding:22px 0;font:500 clamp(1.3rem, 2.2vw, 2rem)/1.15 var(--disp);letter-spacing:-.02em}
+.bn em{font:400 .8rem "DM Mono",monospace;font-style:normal;color:var(--b)}
+.lg{min-height:100svh;display:grid;align-items:center;padding:130px var(--pad) 80px}
+.lg .in2{max-width:560px;width:100%;margin:0 auto}
+.lg h1{font-size:clamp(3rem, 9vw, 7rem);margin:16px 0 40px}
+.lg .lb{color:var(--b)}
+.sr{margin:0 var(--pad) 40px;max-width:900px}
+.sr input{width:100%;background:none;border:0;border-bottom:2px solid var(--ink);color:var(--ink);font:500 clamp(1.4rem, 3vw, 2.6rem) var(--disp);letter-spacing:-.03em;padding:14px 0;outline:0;border-radius:0}
+.sr input::placeholder{color:#9a9ab0}
+.fq{margin:0 var(--pad) var(--sec);max-width:1100px}
+.q{border-top:1.5px solid var(--ink)}
+.q:last-of-type{border-bottom:1.5px solid var(--ink)}
+.q>button{width:100%;display:flex;justify-content:space-between;gap:24px;align-items:center;text-align:left;background:none;border:0;color:var(--ink);padding:26px 0;cursor:pointer;font:500 clamp(1.25rem, 2.4vw, 2.1rem)/1.15 var(--disp);letter-spacing:-.03em}
+.q>button i{flex:none;position:relative;width:22px;height:22px}
+.q>button i::before,.q>button i::after{content:"";position:absolute;left:0;top:10px;width:22px;height:2px;background:currentColor;transition:transform 0.6s var(--ease)}
+.q>button i::after{transform:rotate(90deg)}
+.q.o>button i::after{transform:rotate(0)}
+.qa{height:0;overflow:hidden}
+.qa p{margin:0 0 28px;color:var(--mute);max-width:40em}
+.tb{display:flex;gap:8px;flex-wrap:wrap;padding:0 var(--pad) 36px}
+.tb a{padding:0 22px;height:44px;display:inline-flex;align-items:center;border:1.5px solid var(--ink);border-radius:99px;transition:0.5s var(--ease)}
+.tb a.on{background:var(--ink);color:var(--cream)}
+.lgl{padding:0 var(--pad) var(--sec);max-width:calc(820px + var(--pad)*2)}
+.lgl h3{font-size:1.7rem;margin:34px 0 10px}
+.lgl p{color:var(--mute);margin:0 0 12px}
+.nt{background:var(--sun);padding:14px 18px;font-size:.9rem;margin-bottom:26px;border-radius:4px}

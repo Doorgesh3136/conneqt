@@ -1,0 +1,20 @@
+/* early access */
+.ea{gap:clamp(18px,4svh,44px)}
+.ea h1{font-size:clamp(2.2rem,calc(var(--fu)*13),6rem)}
+.ea .rb{width:clamp(120px,24svh,240px);font-size:clamp(1rem,3svh,1.5rem)}
+.trs{gap:clamp(8px,1.7svh,20px)}
+.tier{min-height:clamp(84px,16.5svh,240px);gap:clamp(4px,1svh,12px);padding:clamp(10px,1.9svh,26px) clamp(14px,4vw,26px)}
+.trs.scr>.tier:last-child{padding-bottom:clamp(10px,1.9svh,26px)!important}
+.tier b{font-size:clamp(2.5rem,calc(var(--fu)*15.5),5.4rem)}
+.tier span{font-size:clamp(.92rem,calc(var(--fu)*4.4),1.3rem)}
+.goal{margin:0 var(--pad);padding:clamp(12px,2.3svh,36px) clamp(16px,4.6vw,40px);gap:clamp(8px,1.6svh,24px)}
+.goal h2{font-size:clamp(1.3rem,calc(var(--fu)*7.2),3rem)}
+.goal dl{margin-top:clamp(6px,1.3svh,18px)}
+.goal dl div{padding:clamp(3px,.75svh,10px) 0}
+.goal dd{font-size:clamp(.84rem,calc(var(--fu)*3.8),1.1rem)}
+.goal .btn{margin-top:clamp(6px,1.3svh,18px)}
+.gsl{--gs:clamp(70px,calc(100svh - var(--top) - var(--bot) - var(--fu)*84),380px);aspect-ratio:auto;height:var(--gs);width:100%;max-height:none;justify-self:stretch}
+.gsl img{object-fit:cover;object-position:50% 34%;border-radius:4px}
+.gdt{bottom:8px}
+.vcs{gap:clamp(8px,1.6svh,20px);padding:0 var(--pad)}
+

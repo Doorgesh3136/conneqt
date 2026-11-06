@@ -1,0 +1,20 @@
+/* labels and hints stay */
+.sh2 .lb,.sk>.skh .lb{display:block}
+.hm .hint{display:flex;margin-top:clamp(8px,1.6svh,20px)}
+
+/* The problem hero: sun, globe, icons and birds all inside the screen */
+.hero{--r:calc(var(--d)/2 + 4px);--fs:clamp(30px,calc(var(--d)*.19),50px)}
+.hero>.hsun{left:calc(var(--cx) - var(--d)/2);right:auto;top:calc(var(--cy) - var(--d)/2);width:var(--d);translate:none}
+.hero>.stk{display:block;left:calc(var(--cx) - var(--d)*.23);right:auto;top:calc(var(--cy) - var(--d)*.31);width:calc(var(--d)*.46);translate:none}
+.hero>.birds{left:calc(var(--cx) + var(--d)*.2);right:auto;top:calc(var(--cy) - var(--d)*.56);width:calc(var(--d)*.34);translate:none}
+.hero>.fiw{display:block;position:absolute;inset:0;z-index:2;translate:none}
+.hero>.fiw>.fi{display:grid;width:var(--fs);right:auto!important}
+.hero>.fiw>.fi:nth-child(1){left:calc(var(--cx) - var(--r)*.97 - var(--fs)/2)!important;top:calc(var(--cy) - var(--r)*.24 - var(--fs)/2)!important}
+.hero>.fiw>.fi:nth-child(2){left:calc(var(--cx) + var(--r)*.8 - var(--fs)/2)!important;top:calc(var(--cy) + var(--r)*.58 - var(--fs)/2)!important}
+.hero>.fiw>.fi:nth-child(3){left:calc(var(--cx) - var(--r)*.62 - var(--fs)/2)!important;top:calc(var(--cy) - var(--r)*.78 - var(--fs)/2)!important}
+.hero>.fiw>.fi:nth-child(4){left:calc(var(--cx) + var(--r)*.94 - var(--fs)/2)!important;top:calc(var(--cy) - var(--r)*.34 - var(--fs)/2)!important}
+.hero>.fiw>.fi:nth-child(5){left:calc(var(--cx) - var(--r)*.9 - var(--fs)/2)!important;top:calc(var(--cy) + var(--r)*.42 - var(--fs)/2)!important}
+
+/* the small photo beside "fragmented" */
+.gap .shd.wp{grid-template-columns:minmax(0,1fr) auto;gap:clamp(8px,3vw,24px);align-items:start}
+.gap .shp{display:block;width:clamp(74px,calc(var(--fu)*25),210px);padding:5px 5px 16px}

@@ -1,0 +1,13 @@
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;height:54px;padding:0 30px;background:var(--ink);color:var(--cream);border-radius:99px;border:1.5px solid var(--ink);isolation:isolate;cursor:pointer;transition:color 0.6s var(--ease)}
+.btn::before{content:"";position:absolute;left:-10%;right:-10%;top:0;height:140%;background:var(--sun);border-radius:50% 50% 0 0;transform:translateY(105%);transition:transform 0.7s var(--ease),border-radius 0.7s var(--ease);z-index:-1}
+.btn:hover{color:var(--ink)}
+.btn:hover::before{transform:translateY(-10%);border-radius:0}
+.btn.ol{background:transparent;color:var(--ink)}
+.btn.ol:hover{color:var(--ink)}
+.btn.sun{background:var(--sun);color:var(--ink)}
+.btn.sun::before{background:var(--ink)}
+.btn.sun:hover{color:var(--cream)}
+.btn.ow{background:transparent;color:#fff;border-color:#fff}
+.btn.ow:hover{color:var(--ink)}
+.btn.ow::before{background:#fff}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}

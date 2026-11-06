@@ -1,0 +1,24 @@
+/* become a donor */
+.dn2{min-height:100vh;min-height:100svh;padding:var(--top) var(--pad) var(--bot);gap:clamp(10px,2svh,30px);align-content:center}
+.dsteps{margin-bottom:clamp(8px,1.9svh,24px)}
+.dsteps span{width:clamp(26px,4.4svh,38px);height:clamp(26px,4.4svh,38px)}
+.dnk{margin-bottom:clamp(5px,1.1svh,14px)}
+.dn2 h1{font-size:clamp(1.75rem,calc(var(--fu)*10.6),4.6rem);max-width:none;margin-bottom:clamp(10px,2.6svh,30px)}
+.dstep{gap:clamp(8px,2svh,24px)}
+.dstep>.fl2{margin:clamp(2px,.8svh,8px) 0 calc(clamp(2px,.8svh,8px)*-1)}
+.dn2 .fm{gap:clamp(4px,1svh,14px)}
+.dn2 .er{font-size:.84rem}
+.dn2 .ctas{justify-self:stretch}
+.dn2 .ctas .btn{flex:1 1 auto}
+.dstep[data-step="1"]{grid-template-columns:1fr 1fr;column-gap:16px}
+.dstep[data-step="1"]>.fl2,.dstep[data-step="1"]>.ctas,.dstep[data-step="1"]>div:nth-of-type(3){grid-column:1/-1}
+.dn2 .f label{margin-bottom:2px}
+.dn2 .f input{padding:3px 0 7px;font-size:max(1.1rem,calc(16px/var(--z,1)))}
+.ch{gap:8px}
+.ch span{height:clamp(38px,6svh,46px);padding:0 clamp(14px,4vw,22px)}
+.ok{padding:clamp(16px,3svh,40px)}
+.ok h3{font-size:clamp(1.6rem,calc(var(--fu)*8.4),3.2rem);margin:clamp(6px,1.4svh,16px) 0}
+.ok p{margin-bottom:clamp(10px,2svh,22px)}
+.ok svg{width:clamp(38px,6.6svh,64px);height:clamp(38px,6.6svh,64px)}
+.dnc{--dc:min(calc(100svh - var(--top) - var(--bot) - var(--fu)*96),84vw,520px);width:auto;height:var(--dc);aspect-ratio:1/1.05;justify-self:center}
+

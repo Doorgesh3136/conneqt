@@ -1,0 +1,18 @@
+/* phones on their side */
+@media (orientation:landscape) and (max-height:559px){
+.hero{--d:min(calc(100svh - var(--top) - var(--bot)),38vw);--cx:calc(100vw - var(--pad) - var(--d)/2 - 16px);--cy:calc(var(--top) + (100svh - var(--top) - var(--bot))/2)}
+.hero h1.h1n,.hr{max-width:calc(100vw - var(--pad)*2 - var(--d) - 34px)}
+.hero h1.h1n{font-size:clamp(1.25rem,7.6vh,2.3rem)}
+.hero>.lb{margin-bottom:clamp(4px,1.4vh,10px)}
+.hr{margin-top:clamp(5px,1.6vh,12px)}
+.hr p{font-size:clamp(.8rem,3.7vh,1rem);line-height:1.4}
+.hero .hint{margin-top:clamp(4px,1.4vh,10px)}
+.dn2{grid-template-columns:minmax(0,1fr) auto!important}
+.dnc{display:block;--dc:calc(100svh - var(--top) - var(--bot));height:var(--dc);width:auto;aspect-ratio:1/1.05;max-width:26vw}
+.cd span,.cd b{display:block}
+.cd span{font-size:.66rem;line-height:1.22}
+.cdc{width:clamp(116px,20vw,170px)}
+.cap{display:block}
+#vB{padding-bottom:calc(var(--bot) + 24px)}
+}
+

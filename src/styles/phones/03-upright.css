@@ -1,0 +1,30 @@
+
+/* upright phones and tablets */
+@media (max-width:899px) and (orientation:portrait){
+.hero{justify-content:flex-start;--vis:34svh;--d:min(var(--vis),72vw,560px);--cx:50vw;--cy:calc(100svh - var(--bot) - var(--vis)/2)}
+
+/* donor picture: the three students walk in a row across the space left */
+.dnc{--dc:clamp(84px,calc(100svh - var(--top) - var(--bot) - var(--fu)*100),300px);width:100%;max-width:560px;height:var(--dc);aspect-ratio:auto}
+.dnc .cut{top:0;bottom:auto;height:100%;width:auto;max-width:none}
+.dnc .q1{left:6%}
+.dnc .q2{left:38%;right:auto}
+.dnc .q3{left:70%}
+.dnc .dsun{left:50%;right:auto;top:-4%;height:108%;width:auto;translate:-50% 0}
+}
+
+/* home hero: the two buttons share a row, the picture gets the height */
+@media (min-width:360px) and (max-width:639px) and (orientation:portrait){
+.hm .ctas{flex-wrap:nowrap;gap:8px}
+.hm .ctas .btn{flex:1 1 auto;padding:0 10px;font-size:clamp(.62rem,2.8vw,.74rem);letter-spacing:.07em;white-space:nowrap}
+}
+
+/* phones held upright: the map gets the space between title and labels, and the labels keep their descriptions */
+@media (max-width:799px) and (orientation:portrait){
+#sA .sh2{position:relative}
+#sA #vA{flex:1 1 0;min-height:0;margin:0;padding:clamp(3px,1svh,10px) 0;container-type:size;align-items:center;justify-content:flex-start}
+#sA .fz{width:min(200vw,calc(100cqh*2.276))}
+.sAl{position:relative;left:auto;right:auto;bottom:auto;flex:none;margin:0 var(--pad) var(--bot);gap:clamp(5px,1svh,8px)}
+.sAc{padding:clamp(5px,1.1svh,10px) 12px}
+.sAc span{display:block;font-size:clamp(.72rem,calc(var(--fu)*3.3),.84rem);line-height:1.26}
+}
+

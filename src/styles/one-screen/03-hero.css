@@ -1,0 +1,11 @@
+/* hero */
+.hm{min-height:100vh;min-height:100svh;padding:var(--top) var(--pad) var(--bot);gap:clamp(10px,2.2svh,30px);align-content:center}
+.hm h1{font-size:clamp(2.3rem,calc(var(--fu)*13.4),6rem)}
+.hm-tx>span.lb{margin-bottom:clamp(8px,1.6svh,20px)}
+.hm-tx p{font-size:clamp(.9rem,calc(var(--fu)*4.2),1.35rem);margin:clamp(8px,1.6svh,22px) 0 clamp(10px,2svh,24px)}
+.hm-chip{font-size:clamp(.72rem,calc(var(--fu)*3.3),1rem);padding:clamp(5px,1svh,10px) clamp(8px,1.5svh,14px);gap:6px}
+.hm-chip i{width:clamp(16px,2.8svh,24px);height:clamp(16px,2.8svh,24px)}
+.hm-chip.c1{left:auto;right:58%;top:44%}
+.hm-chip.c2{right:auto;left:62%;bottom:14%}
+.hm-vis{--hv:min(calc(100svh - var(--top) - var(--bot) - var(--fu)*75),84vw,560px);left:0;width:auto;height:var(--hv);justify-self:center}
+

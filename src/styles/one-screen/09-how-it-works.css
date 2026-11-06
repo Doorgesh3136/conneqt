@@ -1,0 +1,10 @@
+/* how it works: hero and why cards */
+.hw h1{font-size:clamp(1.9rem,calc(var(--fu)*9.8),4.6rem)!important;max-width:none!important}
+.pgh p{font-size:clamp(.92rem,calc(var(--fu)*4.2),1.3rem);margin-top:clamp(10px,1.8svh,24px)}
+.pgh .lb{margin-bottom:clamp(8px,1.6svh,24px)}
+.pgh h1{font-size:clamp(2.1rem,calc(var(--fu)*12),6rem);max-width:none}
+.hm2{gap:clamp(10px,2.2svh,30px)}
+.hv2{--hv:min(calc(100svh - var(--top) - var(--bot) - var(--fu)*68),84vw,560px);height:var(--hv);width:auto!important;aspect-ratio:714/796!important;justify-self:center}
+.wc{gap:clamp(8px,1.6svh,18px);padding:0 var(--pad)}
+.wcc{padding:clamp(6px,1.1svh,10px)}
+

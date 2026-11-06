@@ -1,0 +1,10 @@
+/* login */
+.lg2{padding:var(--top) var(--pad) var(--bot);gap:clamp(12px,2.6svh,36px)}
+.lgt .lb{margin-bottom:clamp(6px,1.3svh,18px)}
+.lg2 h1{font-size:clamp(2.1rem,calc(var(--fu)*12.5),6rem)!important}
+.lgt p{font-size:clamp(.92rem,calc(var(--fu)*4.2),1.3rem);margin-top:clamp(6px,1.4svh,20px)}
+.lgb{padding:clamp(14px,2.6svh,32px);box-shadow:5px 5px 0 var(--ink)}
+.lgb h2{font-size:clamp(1.3rem,calc(var(--fu)*6.6),2.4rem);margin-bottom:clamp(8px,1.6svh,22px)}
+.lg2 .fm{gap:clamp(8px,1.7svh,22px)}
+.lg2 .f input{font-size:max(1rem,calc(16px/var(--z,1)))!important;padding:3px 0 7px}
+.lgn{margin-top:clamp(8px,1.6svh,20px);padding-top:clamp(6px,1.3svh,16px)}

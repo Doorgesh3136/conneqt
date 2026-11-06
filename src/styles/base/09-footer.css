@@ -1,0 +1,15 @@
+.ft{background:var(--sand);padding:clamp(70px, 9vw, 130px) var(--pad) 28px;overflow:hidden}
+.ft .tp{display:flex;justify-content:space-between;align-items:flex-start}
+.ft .logo{height:40px;width:auto;color:var(--ink)}
+.ft .tp img{width:48px;animation:sp 20s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.big{font:500 clamp(2.4rem, 10.4vw, 14rem)/1 var(--disp);letter-spacing:-.05em;margin:56px 0 46px;white-space:nowrap;display:flex}
+.big .c{display:inline-block;overflow:hidden;padding:.04em 0 .1em}
+.big .c>.i{display:inline-block}
+.ft .cl{display:grid;gap:40px;margin-bottom:56px}
+.ft .cl p{margin:0;font:400 clamp(1.3rem, 2.2vw, 2rem)/1.25 var(--disp);letter-spacing:-.02em;max-width:22em}
+.ft .fl{display:flex;flex-direction:column;gap:2px;align-items:flex-start}
+.ft .fl a,.mt a{display:inline-flex;align-items:center;min-height:44px}
+.mt{display:flex;flex-direction:column;gap:4px;border-top:1.5px solid var(--ink);padding-top:14px;font:400 .76rem "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.mt p{margin:0}
+@media (min-width: 900px){.ft .cl{grid-template-columns:1fr 1fr}.mt{flex-direction:row;gap:36px}.mt p{margin-left:auto}}

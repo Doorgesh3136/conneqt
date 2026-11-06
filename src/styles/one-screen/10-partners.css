@@ -1,0 +1,17 @@
+/* partners */
+.pa{margin:0 var(--pad);flex:1 1 auto;height:auto;flex-direction:column;min-height:0;max-height:none}
+.fix .shd{padding-bottom:clamp(8px,1.8svh,20px)}
+.pn{flex:none;min-height:0;display:grid;grid-template-columns:auto minmax(0,1fr) auto;column-gap:12px;align-items:center;padding:clamp(8px,1.7svh,18px) clamp(14px,4vw,26px);justify-content:stretch}
+.pn.on{flex:1 1 auto}
+.pn>em{grid-column:1;grid-row:1;align-self:start;margin-top:.42em}
+.pn>div{grid-column:2;grid-row:1;max-width:none!important}
+.pn h3,.pn:not(.on) h3,.pn.on>div h3{font-size:clamp(1.05rem,calc(var(--fu)*5.4),2.2rem);line-height:1.08;writing-mode:horizontal-tb;rotate:none;align-self:auto}
+.pn .mo{opacity:0;max-height:0;margin:0;max-width:none;font-size:var(--body);line-height:1.42}
+.pn.on .mo{opacity:1;max-height:9em;margin-top:clamp(3px,.9svh,10px)}
+.pn.on>div{min-height:calc(var(--mo-lines,3)*1.42*var(--body) + 2.4em)}
+.pn .pch{grid-column:3;grid-row:1;position:relative;right:auto;bottom:auto;display:none;opacity:1;translate:none;height:clamp(76px,16svh,150px);align-self:end;margin-bottom:calc(clamp(8px,1.7svh,18px)*-1)}
+.pn.on .pch{display:block}
+.pcr{gap:clamp(8px,2svh,28px)}
+.pcr h2{font-size:clamp(1.8rem,calc(var(--fu)*10),4rem)!important;margin:clamp(6px,1.2svh,14px) 0 clamp(4px,1svh,14px)!important}
+.pcr .bn li{font-size:clamp(.94rem,calc(var(--fu)*4.2),1.4rem);padding:clamp(7px,1.45svh,18px) 0;gap:12px}
+

@@ -1,0 +1,1 @@
+P.how=function(r){var c=$(".sd",r);c.forEach(function(d,i){if(i<c.length-1)G.to(d,{scale:.93,ease:"none",scrollTrigger:{trigger:c[i+1],start:"top 85%",end:"top 20%",scrub:true}});G.from($("h3",d),{yPercent:30,opacity:0,duration:1.2,ease:"expo.out",scrollTrigger:{trigger:d,start:"top 80%"}})})};

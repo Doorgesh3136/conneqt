@@ -1,0 +1,63 @@
+/* landscape phones: two columns wherever there is a picture */
+@media (orientation:landscape) and (max-height:559px){
+.hm,.hw.hw1.hm2,.dn2,.lg2{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;align-items:center;align-content:center}
+.hm-vis,.hv2,.dnc{--hv:calc(100svh - var(--top) - var(--bot));--dc:var(--hv);max-width:100%}
+.hv2{height:var(--hv);width:auto!important}
+.hm .ctas .btn,.ctas .btn{flex:0 1 auto;padding:0 18px}
+.imp .img{grid-template-columns:repeat(3,minmax(0,1fr))}
+.imc,.imp .imc{flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(8px,2.4svh,16px) 16px!important;gap:6px;min-height:0!important}
+.imc span{text-align:left}
+.jr{grid-template-columns:auto minmax(0,1fr)}
+.msn2 .jri{height:calc(100svh - var(--top) - var(--bot))}
+.msnh.wp{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:center}
+.msn:not(.msn2) .msw{width:100%}
+.lead{align-content:center}
+.ceo{grid-row:1/8;width:clamp(96px,calc((100svh - var(--top) - var(--bot))*.72),240px)}
+.leadt h2,.leadt>.lb,.leadt p{grid-column:2}
+.leadt h2{align-self:start}
+.cta .rr{grid-template-columns:minmax(0,1fr) auto}
+.ft .cl{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.ft .cl .fl:first-child{grid-template-rows:repeat(3,auto)}
+.big{font-size:min(7.6vw,15svh);margin:clamp(4px,1.4svh,10px) 0}
+.gpl{grid-template-columns:minmax(0,.3fr) minmax(0,1fr)}
+.trs,.vcs,.wc{grid-template-columns:repeat(3,minmax(0,1fr))}
+.goal{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center}
+.gsl{--gs:calc(100svh - var(--top) - var(--bot) - 36px);max-height:none}
+.two{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.ea{grid-template-columns:minmax(0,1fr) auto}
+.sk .sd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.55fr);grid-template-rows:auto minmax(0,1fr);column-gap:16px}
+.sk .sd .sdi.co{grid-column:2;grid-row:1/3;height:100%}
+.sk .sd>.sdt{grid-column:1;grid-row:1}
+.sk .sd>div:last-child{grid-column:1;grid-row:2;align-self:end}
+#dock{top:calc(4px + env(safe-area-inset-top,0px));bottom:auto;z-index:101}
+#sA{justify-content:center}
+#sA .sh2{top:auto;bottom:0;left:0;right:auto;max-width:46vw;padding:0 var(--pad) 8px}
+#sA .cdw,#sA .stm{display:block}
+.sAl{display:none}
+#sA .fz{width:min(92%,calc((100svh - var(--top) - 20px)*2.276))}
+#sA #vA{margin-top:0;flex:1 1 0;min-height:0;align-items:center;justify-content:center;padding:calc(var(--top) - 22px) 0 6px}
+#sD{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr auto auto 1fr;column-gap:3vw;padding:0 var(--pad)}
+#sD>.sh2{grid-column:2;grid-row:2;padding:0}
+#sD .sh2 h2{font-size:clamp(1.1rem,6.4vh,1.9rem)}
+#sD>#vD{grid-column:1;grid-row:1/5;min-height:0;padding:var(--top) 0 10px}
+#sD>.sdp{grid-column:2;grid-row:3;text-align:left;margin:0;padding:8px 0 0;max-width:none}
+.vc{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1fr);grid-template-rows:1fr auto auto 1fr;column-gap:8px;row-gap:1px;align-items:center;padding:6px}
+.vph{grid-row:1/-1;margin:0}
+.vc strong{grid-column:2;grid-row:2;font-size:clamp(.82rem,2.9vh,1.05rem)}
+.vc>span{grid-column:2;grid-row:3;font-size:.76rem}
+.vc .lb{grid-column:2;grid-row:4;align-self:start;margin:0;padding:0;font-size:.56rem}
+.vpl{width:clamp(22px,8svh,34px)}
+.vph .vpl{right:2px;bottom:2px}
+.dn2>div:first-child{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);grid-template-rows:auto auto 1fr;column-gap:clamp(18px,4vw,44px);align-items:start}
+.dsteps,.dnk,.dn2 h1{grid-column:1}
+.dn2 .fm,.dn2 .ok{grid-column:2;grid-row:1/4}
+.nbb{grid-template-columns:repeat(4,minmax(0,1fr));padding:clamp(14px,5svh,30px) 14px!important;clip-path:polygon(.6% 0,100% 7%,99.4% 100%,0 93%)}
+.nbb b{font-size:clamp(1.8rem,6.4vw,3rem)}
+.nbb span{font-size:clamp(.74rem,2.6svh,.95rem);margin-top:6px}
+.wcc .wci{height:clamp(44px,20svh,110px);aspect-ratio:auto;padding:4px 0 0}
+.wci .chr{max-height:none}
+.wcc{gap:4px}
+.wcc h3{font-size:clamp(.95rem,3.1vh,1.3rem);padding:2px 4px 0}
+.wcc p{font-size:clamp(.78rem,2.5vh,.92rem);line-height:1.3;padding:0 4px}
+}
+

@@ -1,0 +1,22 @@
+/* ===== v16: phones show everything the desktop shows, and run light =====
+   Nothing here reaches desktop: every rule is behind a phone-layout query, a touch query, or a class only touch devices get. */
+
+/* the scroll lock: the browser itself refuses to pan, so a busy phone cannot let a swipe slip through. main.js lifts it inside the animated scenes */
+html.lk,html.lk body,html.lk main,html.lk [data-page],html.lk [data-page]>*,html.lk .ft,html.lk nav,html.lk #dock{touch-action:pinch-zoom}
+
+/* off screen, nothing animates (main.js adds .oov on touch devices). It carries on when it comes back */
+.oov,.oov *{animation-play-state:paused!important}
+
+/* GPU layers only while something moves: GSAP adds them for the length of an animation */
+@media (hover:none) and (pointer:coarse){
+.w>.i,.rot>span,.hf,.hf b{will-change:auto}
+/* wing flaps and floating icons: same motion, drawn by the GPU, so they cost the main thread nothing. Not the intro's birds: the page repaints then anyway, and GPU layers measured 29% worse there */
+.birds .bd path,.hm-birds .bd path{animation:none}
+.birds,.hm-birds{aspect-ratio:2/1}
+.bdx{position:absolute;display:block;transform-origin:50% 100%;will-change:transform;animation:flap .42s ease-in-out infinite alternate}
+.bdx svg{display:block;width:100%;overflow:visible}
+.fi{animation:fif var(--ft,2.6s) ease-in-out infinite alternate}
+.fi:nth-child(1){--dy:10px;--dr:-8deg;--ft:2.2s}.fi:nth-child(2){--dy:13px;--dr:8deg;--ft:2.55s}.fi:nth-child(3){--dy:16px;--dr:-8deg;--ft:2.9s}.fi:nth-child(4){--dy:19px;--dr:8deg;--ft:3.25s}.fi:nth-child(5){--dy:22px;--dr:-8deg;--ft:3.6s}
+}
+@keyframes fif{from{translate:0 0;rotate:0deg}to{translate:0 var(--dy,12px);rotate:var(--dr,8deg)}}
+

@@ -1,0 +1,62 @@
+/* ===== v7 ===== */
+.hm-vis{aspect-ratio:1280/1362}
+.hf b{background-image:url(../images/home/hero.webp)}
+/* bullets instead of numbers */
+em.bu,b.bu{display:inline-block;width:14px;height:14px;border-radius:50%;background:currentColor;font-size:0;flex:none;opacity:1}
+.sd em.bu{width:clamp(18px,2vw,26px);height:clamp(18px,2vw,26px);opacity:.85}
+.bn em.bu,.gp em.bu{background:var(--b);width:12px;height:12px;align-self:center}
+.cd b.bu{width:10px;height:10px;background:var(--b)}
+.pn em.bu{width:12px;height:12px}
+/* white cartoon characters */
+.chr{display:block;overflow:visible}
+.wci{display:grid;place-items:center;background:var(--sky);padding:14px 0 0;overflow:hidden}
+.wcc:nth-child(2) .wci{background:var(--sun)}.wcc:nth-child(3) .wci{background:var(--rose)}
+.wci .chr{height:100%;width:auto;max-height:230px;transform-origin:50% 100%;animation:chb 3.4s ease-in-out infinite}
+.wcc:nth-child(2) .chr{animation-delay:.5s}.wcc:nth-child(3) .chr{animation-delay:1s}
+@keyframes chb{0%,100%{transform:translateY(4%) rotate(-2deg)}50%{transform:translateY(0) rotate(2deg)}}
+.chr.sdi{position:absolute;right:6%;bottom:0;top:auto;translate:none;width:auto;height:78%;max-height:none;rotate:0deg;border:0;box-shadow:none;background:none;animation:chb 3.4s ease-in-out infinite}
+@media (max-width:899px){.chr.sdi{position:static;height:min(24svh,180px);align-self:flex-end;margin:0}}
+/* mission world image */
+.msw{width:min(100%,640px);justify-self:end;height:auto}
+@media (min-width:900px) and (min-height:560px){.msn:not(.msn2) .msw{width:min(44vw,72vh)}}
+/* donor page cut-outs */
+.dnc .cut{position:absolute;height:auto;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(27,27,51,.18))}
+.dnc .q1{left:2%;top:4%;width:38%;rotate:0deg}.dnc .q2{right:4%;top:14%;width:34%;rotate:0deg}.dnc .q3{left:36%;bottom:0;top:auto;width:30%;rotate:0deg}
+/* how it works hero without photo */
+.hw1{grid-template-columns:1fr!important}.hw1 h1{max-width:20ch!important}
+/* prices without images */
+.trs{padding-top:0}.tier{padding-top:clamp(22px,2.6vw,34px)}
+@media (min-width:900px) and (min-height:560px){.trs.scr{padding-top:clamp(84px,12vh,130px)!important}}
+/* partners why: no image */
+.pn.on>div{max-width:none!important}
+/* our first goal: info left, slideshow right */
+@media (min-width:1000px){.goal{grid-template-columns:1fr 1fr;align-items:center}}
+.goal dl{margin-top:clamp(20px,3vh,36px)}
+.gsl{position:relative;aspect-ratio:1120/1279;width:min(100%,460px);justify-self:center;max-height:62vh}
+@media (min-width:900px) and (min-height:560px){.gsl{width:min(100%,calc(62vh*.876))}}
+.gsl img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transform:scale(1.04);transition:opacity 1s var(--ease),transform 1.6s var(--ease)}
+.gsl img.on{opacity:1;transform:none}
+.gdt{position:absolute;left:50%;bottom:-22px;translate:-50% 0;display:flex;gap:8px}
+.gdt i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);transition:.5s var(--ease)}.gdt i.on{background:var(--sun);transform:scale(1.4)}
+/* student voices: their heads, full frame */
+.vph{background:none;border:0;overflow:visible;aspect-ratio:694/442;height:auto!important}
+.vph img{object-fit:contain;object-position:50% 100%}
+/* login: big welcome, no photo */
+.lg{grid-template-columns:1fr!important}
+.lg .in2{max-width:none;margin:0}
+.lg h1{font-size:clamp(4rem,17vw,16rem)!important;line-height:.9;margin:16px 0 clamp(28px,5vh,56px)!important}
+.lg .fm{grid-template-columns:1fr 1fr auto;align-items:end;gap:24px 40px;max-width:1200px}
+.lg .fm .er{grid-column:1/-1;order:9}
+.lg .ok{max-width:640px}
+@media (max-width:719px){.lg .fm{grid-template-columns:1fr}}
+/* help center: every question on one screen */
+.hlw{grid-template-columns:1fr!important}
+.hlh{padding-bottom:clamp(14px,2.4vh,30px)!important}
+.hlh h1{font-size:min(8vw,11vh)!important}
+.hlm .htb{padding-bottom:12px}
+.hlm .sr{margin-bottom:14px}.hlm .sr input{font-size:clamp(1.1rem,2vw,1.6rem);padding:8px 0}
+.fq{max-width:none;margin-bottom:clamp(24px,4vh,60px)}
+@media (min-width:900px){.fq{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,4vw,64px);align-content:start}.fq .q:nth-last-of-type(-n+2){border-bottom:1.5px solid var(--ink)}#nq{grid-column:1/-1}}
+.q>button{font-size:clamp(1rem,1.25vw,1.2rem);padding:clamp(10px,1.6vh,16px) 0}
+.qa p{margin-bottom:14px;font-size:.95rem}
+

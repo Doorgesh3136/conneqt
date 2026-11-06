@@ -1,0 +1,25 @@
+/* ===== v8 ===== */
+/* impact cards without images */
+.imp .img{padding-top:0!important}
+.imc,.imp .imc{padding-top:clamp(22px,2.6vw,36px)!important}
+/* how-it-works stacks: header + first card fit on one screen */
+@media (min-width:900px) and (min-height:560px){
+.skh{padding-top:clamp(80px,11vh,110px);padding-bottom:clamp(12px,2.4vh,28px)!important}
+.sk .sd{min-height:0;height:calc(100svh - var(--skh,320px) - 3vh);margin-bottom:3vh}
+.sk .sd h3{font-size:min(4.6vw,7.4vh)}
+.sk .sd p{font-size:min(1.25rem,2.4vh)}
+}
+.sdi.co{rotate:0deg;border:0;box-shadow:none;background:none;max-height:86%;width:auto;max-width:34%;object-fit:contain}
+/* partners why: characters */
+.pch{position:absolute;right:26px;bottom:0;height:72%;width:auto;opacity:0;translate:0 24px;transition:opacity .6s .2s,translate .9s var(--ease) .15s;pointer-events:none}
+.pn.on .pch{opacity:1;translate:0 0;animation:chb 3.4s ease-in-out infinite}
+.pn.on>div{max-width:calc(55% - 30px)!important}
+@media (max-width:899px){.pch{position:static;opacity:1;translate:none;height:150px;align-self:flex-end}.pn.on>div{max-width:none!important}}
+/* help: numbered questions */
+.fq{counter-reset:q;align-items:start}
+.q{counter-increment:q}
+.q>button::before{content:counter(q,decimal-leading-zero);flex:none;width:2.2em;font:400 .8rem "DM Mono",monospace;color:var(--b);letter-spacing:.06em}
+.q>button{justify-content:flex-start}.q>button i{margin-left:auto}
+/* login: welcome back at the top */
+.lg{align-items:start!important;align-content:start}
+

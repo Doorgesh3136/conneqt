@@ -1,0 +1,26 @@
+.tz{background:var(--b);color:#fff;padding:var(--sec) var(--pad)}
+.tz .lb{display:block;color:var(--sun);margin-bottom:16px}
+.tz h2{font-size:clamp(2.2rem, 5.2vw, 5.6rem);max-width:16ch}
+.tz em.s{color:var(--sun)}
+.tzs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px, 3vw, 40px) 20px;margin:clamp(44px, 6vw, 80px) 0}
+@media (min-width: 900px){.tzs{grid-template-columns:repeat(4, 1fr)}}
+.tzs>div{border-top:1.5px solid rgba(255,255,255,0.4);padding-top:18px;display:grid;gap:10px;align-content:start}
+.tzs b{font:400 clamp(3rem, 6vw, 6rem)/0.9 var(--ser);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.tzs span{color:#dfe6ff;font-size:clamp(0.95rem, 1.2vw, 1.1rem);max-width:16em}
+.tzf{display:grid;gap:26px;align-items:center}
+@media (min-width: 900px){.tzf{grid-template-columns:1fr auto}}
+.tzf p{margin:0;font:500 clamp(1.3rem, 2.4vw, 2.2rem)/1.2 var(--disp);letter-spacing:-.02em;max-width:22em}
+.lead{background:var(--sand);padding:var(--sec) var(--pad);display:grid;gap:clamp(56px, 6vw, 90px);align-items:center}
+@media (min-width: 900px){.lead{grid-template-columns:1fr minmax(300px, 420px)}}
+.lead .lb{display:block;color:var(--b);margin-bottom:16px}
+.lead h2{font-size:clamp(2.2rem, 5vw, 5.4rem);max-width:13ch}
+.lead p{color:var(--mute);max-width:30em;margin:24px 0 0;font-size:clamp(1.05rem, 1.4vw, 1.25rem)}
+.ceo{position:relative;width:min(100%, 420px);justify-self:center;isolation:isolate}
+.ceo::before{content:"";position:absolute;right:-12%;top:-8%;width:56%;aspect-ratio:1;border-radius:50%;background:var(--sun);z-index:-1}
+.ceoc{margin:0;background:#fff;border:2.5px solid var(--ink);border-radius:8px;box-shadow:8px 8px 0 var(--ink);overflow:hidden}
+.ceoi{aspect-ratio:4/5;overflow:hidden;border-bottom:2.5px solid var(--ink);background:#f4f6fc}
+.ceoi img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.ceoc figcaption{display:grid;gap:8px;padding:20px 22px 22px}
+.ceoc strong{font:600 clamp(1.4rem, 2vw, 1.8rem)/1.1 var(--disp);letter-spacing:-.03em}
+.ceoc .lb{color:var(--b)}
+@media (max-width: 767px){.ceo::before{right:-6%}}

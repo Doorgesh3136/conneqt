@@ -1,0 +1,14 @@
+/* The problem: hero, statement, numbers, gap */
+.hero{min-height:100vh;min-height:100svh;padding:var(--top) var(--pad) var(--bot);justify-content:center}
+.hero>.lb{margin-bottom:clamp(8px,1.8svh,24px)}
+.hero h1.h1n{font-size:clamp(1.65rem,calc(var(--fu)*10),4.2rem)}
+.hr{margin-top:clamp(10px,2.2svh,36px)}
+.hr p{font-size:clamp(.92rem,calc(var(--fu)*4.3),1.3rem)}
+.hint{margin-top:clamp(10px,2.2svh,36px)}
+.sm{--fs:clamp(1.7rem,min(9.2vw,5.6svh),4.4rem)}
+.gap .shd{padding-bottom:clamp(8px,1.8svh,24px)}
+.gp li{padding:clamp(7px,1.45svh,20px) 0;font-size:clamp(.98rem,calc(var(--fu)*4.7),2rem);gap:clamp(10px,3vw,24px)}
+.gck{width:clamp(26px,5svh,44px)}
+.gpk{padding-top:0}
+.gpl{gap:clamp(6px,1.2svh,14px)}
+

@@ -1,0 +1,21 @@
+/* portrait phones and tablets: one column */
+@media (max-width:899px) and (orientation:portrait){
+:root{--stack:1}
+#mn .sheet{padding-top:clamp(14px,3svh,28px)}
+#mn .sheet a{min-height:clamp(36px,7.4svh,52px);font-size:clamp(1.25rem,min(8.4vw,5.6svh),2.8rem)}
+.hm,.hw,.hw1.hm2,.dn2{grid-template-columns:minmax(0,1fr)!important}
+.lg2{grid-template-columns:minmax(0,1fr)!important}
+.jr{grid-template-columns:minmax(0,1fr);justify-items:center}
+.jq{width:100%}
+.two{grid-template-columns:minmax(0,1fr)}
+.ea{grid-template-columns:minmax(0,1fr)}
+.ea .rbw{justify-self:start;margin-right:0}
+.ea .rb{justify-self:start}
+}
+
+@media (max-width:899px) and (orientation:portrait) and (max-height:520px){.ft .fl a{min-height:26px}.mt{font-size:.66rem;letter-spacing:.04em}.mt a{min-height:24px}}
+@media (max-width:639px) and (orientation:portrait){.pa{--mo-lines:4}}
+@media (max-width:359px) and (orientation:portrait){.pa{--mo-lines:5}}
+
+@media (max-width:339px){.hm-chip.c1{right:auto;left:0}.hm-chip.c2{left:auto;right:0}}
+

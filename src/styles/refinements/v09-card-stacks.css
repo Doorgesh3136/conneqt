@@ -1,0 +1,8 @@
+/* ===== v9: header inside card stack, next card slides straight over the current one ===== */
+.sk>.sd:nth-of-type(1){background:var(--sun)}.sk>.sd:nth-of-type(2){background:var(--rose)}.sk>.sd:nth-of-type(3){background:var(--teal)}.sk>.sd:nth-of-type(4){background:var(--sky)}.sk>.sd:nth-of-type(5){background:#ffe08a}.sk>.sd:nth-of-type(6){background:#ffc4bd}
+.sk>.skh{padding-left:0;padding-right:0}
+@media (min-width:900px) and (min-height:560px){
+.sk>.skh{position:sticky;top:0;z-index:0;background:var(--cream)}
+.sk .sd{position:sticky;z-index:1;top:calc(var(--skh,320px) + var(--k)*12px);height:calc(100svh - var(--skh,320px) - 60px - 3vh)}
+}
+

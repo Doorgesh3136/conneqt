@@ -1,0 +1,19 @@
+/* ===== v15: one section, one screen, on every device =====
+   --top / --bot  room taken by the fixed nav and the bottom dock
+   --fu           fluid unit that follows the smaller of width and height, so type shrinks on short screens too
+   --h2 / --body  shared sizes built on --fu
+   Nothing below uses a fixed section height: if content can't fit, the section grows and is never clipped.
+   fitPage() in main.js then scales whatever is still too tall, and the scroll stops reach anything left over. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+:root{--top:calc(76px + env(safe-area-inset-top,0px));--bot:calc(88px + env(safe-area-inset-bottom,0px));--fu:min(1vw,.58vh);--h2:clamp(1.5rem,calc(var(--fu)*8.4),3.4rem);--body:clamp(.84rem,calc(var(--fu)*3.9),1.2rem)}
+@supports (height:1svh){:root{--fu:min(1vw,.58svh)}}
+@media (max-width:1799px){:root{--pad:max(clamp(20px,4.6vw,88px),env(safe-area-inset-left,0px),env(safe-area-inset-right,0px))}}
+@media (min-width:1024px){:root{--top:86px;--bot:28px}}
+@media (orientation:landscape) and (max-height:559px){:root{--top:calc(60px + env(safe-area-inset-top,0px));--bot:calc(16px + env(safe-area-inset-bottom,0px));--fu:1.15svh}}
+.trs.scr>.tier:last-child{padding-bottom:clamp(22px,2.6vw,34px)!important}
+#vB,#vC,#vD,#vE{container-type:size}
+@media (min-width:900px) and (min-height:560px){#vB,#vC,#vE{padding-bottom:max(clamp(40px,8vh,84px),calc(var(--bot) + 26px))}}
+@media (min-width:800px) and (max-width:899px){#vB{padding-bottom:calc(var(--bot) + 26px)!important}}
+.hm{max-height:none!important}
+@media (min-width:900px) and (max-width:1023px) and (min-height:560px){.scr{padding-bottom:var(--bot)!important}.hm,.hero,.dn2,.lg2,.ft{padding-bottom:var(--bot)}}
+

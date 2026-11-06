@@ -1,0 +1,10 @@
+/* tall tablets: the same grids, with room to breathe */
+@media (min-width:640px) and (max-width:899px) and (orientation:portrait){
+.hm-vis{--hv:min(calc(100svh - var(--top) - var(--bot) - var(--fu)*66),74vw,620px)}
+.hv2{--hv:min(calc(100svh - var(--top) - var(--bot) - var(--fu)*62),70vw,600px)}
+.hm .ctas .btn{flex:0 1 auto}
+.imc,.imp .imc{min-height:clamp(150px,24svh,300px)!important}
+.tier{min-height:clamp(170px,26svh,300px)}
+.gsl{--gs:clamp(120px,calc(100svh - var(--top) - var(--bot) - var(--fu)*78),460px)}
+}
+

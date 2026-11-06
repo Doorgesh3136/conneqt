@@ -1,0 +1,10 @@
+/* the shell */
+.scr{min-height:100vh;min-height:100svh;padding-top:var(--top)!important;padding-bottom:var(--bot)!important;margin-top:0!important;margin-bottom:0!important}
+.scr.fx{display:flex;flex-direction:column;justify-content:center}
+.scr.gd{align-content:center}
+.scr>:last-child{padding-bottom:0!important;margin-bottom:0!important}
+.shd{padding-bottom:clamp(10px,2.2svh,26px)}
+.shd .lb,.msn .lb,.lead .lb,.goal .lb{margin-bottom:clamp(6px,1.2svh,14px)}
+.shd h2,.msn h2,.goal h2,.sk .skh h2{font-size:var(--h2);max-width:none}
+.btn{height:clamp(42px,6.6svh,52px)}
+

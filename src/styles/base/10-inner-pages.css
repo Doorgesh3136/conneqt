@@ -1,0 +1,33 @@
+.pgh{padding:clamp(128px, 15vw, 210px) var(--pad) clamp(44px, 6vw, 90px)}
+.pgh h1{font-size:clamp(2.7rem, 8vw, 8.6rem);max-width:14ch}
+.pgh p{max-width:30em;color:var(--mute);margin:30px 0 0;font-size:clamp(1.05rem, 1.5vw, 1.3rem)}
+.pgh .lb{display:block;color:var(--b);margin-bottom:24px}
+.sk{padding:0 var(--pad) 12vh}
+.sd{position:sticky;top:calc(88px + var(--k)*16px);min-height:60vh;margin-bottom:5vh;padding:clamp(24px, 4vw, 60px);display:flex;flex-direction:column;justify-content:space-between;transform-origin:50% 0;border-radius:6px}
+.sd:nth-child(1){background:var(--sun)}
+.sd:nth-child(2){background:var(--rose)}
+.sd:nth-child(3){background:var(--teal)}
+.sd:nth-child(4){background:var(--sky)}
+.sd em{font:400 clamp(5rem, 15vw, 14rem)/0.8 var(--ser);font-style:normal;opacity:.35}
+.sd h3{font-size:clamp(2.3rem, 6vw, 6rem)}
+.sd p{margin:14px 0 0;max-width:30em;font-size:clamp(1.05rem, 1.4vw, 1.3rem)}
+.tr{padding:0 var(--pad) var(--sec)}
+.tr>div{border-top:1.5px solid var(--ink);padding:30px 0;display:grid;gap:12px}
+.tr h3{font-size:clamp(1.8rem, 3.4vw, 3.4rem)}
+.tr p{margin:0;color:var(--mute);max-width:28em}
+@media (min-width: 900px){.tr>div{grid-template-columns:1fr 1fr;align-items:center}}
+.pa{display:flex;height:min(72vh, 620px);margin:0 var(--pad) var(--sec);border-radius:6px;overflow:hidden}
+.pn{flex:1;position:relative;overflow:hidden;padding:26px;display:flex;flex-direction:column;justify-content:space-between;transition:flex 0.9s var(--ease);min-width:0;cursor:pointer}
+.pn:nth-child(1){background:var(--sun)}
+.pn:nth-child(2){background:var(--rose)}
+.pn:nth-child(3){background:var(--teal)}
+.pn:nth-child(4){background:var(--sky)}
+.pn.on{flex:3.4}
+.pn em{font:400 .85rem "DM Mono",monospace;font-style:normal}
+.pn h3{font-size:clamp(1.7rem, 3.2vw, 3.4rem)}
+.pn .mo{opacity:0;max-height:0;overflow:hidden;transition:opacity 0.6s 0.15s,max-height 0.8s var(--ease);max-width:24em;margin:10px 0 0}
+.pn.on .mo{opacity:1;max-height:200px}
+@media (min-width: 900px){.pn:not(.on) h3{writing-mode:vertical-rl;rotate:180deg;align-self:flex-start;font-size:clamp(1.5rem, 2.3vw, 2.3rem)}.pn:not(.on) em{align-self:flex-start}}
+@media (max-width: 899px){.pa{flex-direction:column;height:auto}.pn{flex:none;min-height:170px}.pn .mo{opacity:1;max-height:none}}
+.two{display:grid;gap:56px;padding:0 var(--pad) var(--sec)}
+@media (min-width: 1000px){.two{grid-template-columns:1fr 1.1fr;gap:90px}}

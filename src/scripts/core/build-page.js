@@ -1,0 +1,1 @@
+var resetStep=function(){};function build(name){var pg=routes[name],root=$('[data-page="'+pg+'"]')[0];resetStep();mms.forEach(function(m){m.revert()});mms=[];if(ctx)ctx.revert();fitPage();scrollTo(0,0);if(lenis)lenis.scrollTo(0,{immediate:true,force:true});if(FX){ctx=G.context(function(){base(root);if(P[pg])P[pg](root)});ST.refresh()}}

@@ -1,0 +1,12 @@
+
+/* donor thank-you: the steps are finished, so the message gets the room */
+.dn2:has(.ok.show) .dsteps,.dn2:has(.ok.show) .dnk{display:none}
+@media (min-width:900px) and (min-height:560px){
+.dn2 .ok{padding:min(40px,4vh) min(44px,5vh)}
+.dn2 .ok svg{width:min(56px,7.4vh);height:min(56px,7.4vh)}
+.dn2 .ok h3{font-size:min(3.6vw,6vh);margin:min(14px,1.8vh) 0}
+.dn2 .ok p{margin-bottom:min(22px,2.4vh)}
+}
+/* the error line has its place reserved, so showing it moves nothing */
+.dn2 .er{min-height:1.6em}
+

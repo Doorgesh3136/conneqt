@@ -1,0 +1,10 @@
+/* card stacks: same system as desktop, one card per screen */
+.sk{padding:0 var(--pad) 1px}
+.sk>.skh{position:sticky;top:0;z-index:0;background:var(--cream);padding-top:var(--top);padding-bottom:clamp(8px,1.6svh,18px)}
+.sk .sd{position:sticky;z-index:1;top:calc(var(--skh,180px) + var(--k)*8px);height:calc(100svh - var(--skh,180px) - var(--bot) - 44px);min-height:0;margin-bottom:calc(var(--bot) + 44px);padding:clamp(11px,2.1svh,26px) clamp(14px,4vw,30px);gap:clamp(3px,.9svh,12px);justify-content:flex-start;overflow:hidden}
+.sk .sd .sdi.co{position:static;translate:none;flex:1 1 0;height:0;min-height:0;width:100%;max-width:none;max-height:none;margin:0;align-self:center;object-fit:contain}
+.sk .sd h3{font-size:clamp(1.25rem,calc(var(--fu)*7),3rem);line-height:1.06}
+.sk .sd p{font-size:var(--body);line-height:1.42;margin-top:clamp(3px,.9svh,10px);max-width:none}
+.sk .sd>div:last-child{max-width:none}
+.ac{height:clamp(24px,4.4svh,32px)}
+

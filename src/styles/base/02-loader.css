@@ -1,0 +1,12 @@
+#ld{position:fixed;inset:0;z-index:300;background:var(--sky);clip-path:inset(0% 0% 0% 0%);overflow:hidden;animation:ldf .01s 9s forwards}
+@keyframes ldf{to{opacity:0;visibility:hidden}}
+.lsun{position:absolute;left:50%;bottom:28%;width:min(64vw, 440px);aspect-ratio:1;border-radius:50%;background:var(--sun);translate:-50% 0}
+.lgr{position:absolute;left:0;right:0;bottom:0;height:30%;width:100%;display:block}
+.lw2{position:absolute;left:0;right:0;top:32%;height:clamp(4.4rem, 15vw, 11.5rem);overflow:hidden}
+.lw2 span{position:absolute;left:0;right:0;top:0;text-align:center;font:500 clamp(3rem, 12vw, 9rem)/1.18 var(--disp);letter-spacing:-.04em;white-space:nowrap;unicode-bidi:plaintext;color:var(--ink)}
+.lgf{position:absolute;left:50%;top:44%;translate:-50% -50%;width:min(360px, 70vw);color:var(--ink);opacity:0}
+.lbr{position:absolute;left:var(--pad);right:var(--pad);bottom:calc(var(--pad)*.5 + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:flex-end;color:var(--ink)}
+#cnt{font:400 clamp(3.2rem, 10vw, 7.5rem)/0.8 var(--ser);font-variant-numeric:tabular-nums}
+.lbr .lb{opacity:.8;text-align:right}
+.bd path{transform-box:fill-box;transform-origin:50% 100%;animation:flap .42s ease-in-out infinite alternate}
+@keyframes flap{to{transform:scaleY(0.35)}}

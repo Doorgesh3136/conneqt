@@ -1,0 +1,10 @@
+/* scenes: the header takes its real height and the drawing gets the rest, clear of the dock */
+.sh2{position:relative;padding:var(--top) var(--pad) 0}
+#sA .sh2{position:absolute}
+.scn{justify-content:flex-start}
+#vB,#vC,#vE{padding:clamp(6px,1.4svh,16px) 0 var(--bot)}
+#sD>#vD{padding:clamp(6px,1.4svh,16px) 0 0;flex:1 1 0}
+.xc{bottom:max(15svh,calc(var(--bot) + 6px))}
+.sdp{padding:clamp(8px,1.6svh,18px) var(--pad) var(--bot);font-size:clamp(.82rem,calc(var(--fu)*3.6),1.1rem);line-height:1.38}
+.stps{margin-top:clamp(4px,1svh,12px);font-size:clamp(.95rem,calc(var(--fu)*4.4),1.4rem)}
+

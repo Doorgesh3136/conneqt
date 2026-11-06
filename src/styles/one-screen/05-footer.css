@@ -1,0 +1,16 @@
+/* footer: everything on one screen */
+.ft{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:var(--top) var(--pad) var(--bot)}
+body:has([data-page][data-free]:not([hidden])) .ft{min-height:0}
+.ft .logo{height:clamp(24px,4.6svh,40px)}
+.ft .tp img{width:clamp(30px,5.8svh,48px)}
+.big{font-size:min(10.2vw,11svh);margin:clamp(8px,2svh,30px) 0 clamp(6px,1.6svh,24px)}
+.ft .cl{gap:clamp(8px,1.8svh,28px);margin-bottom:clamp(8px,1.6svh,26px)}
+.ft .cl p{font-size:clamp(1rem,calc(var(--fu)*4.9),1.7rem);max-width:none}
+.ft .cl>div{gap:0 clamp(16px,6vw,48px)!important;justify-content:flex-start!important}
+.ft .cl .fl:first-child{display:grid;grid-template-columns:auto auto;column-gap:clamp(18px,7vw,48px)}
+.ft .fl{gap:0}
+.ft .fl a{min-height:clamp(30px,5.3svh,44px)}
+.mt{flex-direction:row;flex-wrap:wrap;gap:0 clamp(12px,4vw,28px);padding-top:clamp(4px,1svh,12px)}
+.mt a{min-height:clamp(28px,4.8svh,44px)}
+.mt p{flex:1 1 100%;margin:0;line-height:1.4}
+

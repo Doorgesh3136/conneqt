@@ -1,0 +1,27 @@
+.wp{display:grid;gap:clamp(24px, 4vw, 64px);align-items:end}
+@media (min-width: 640px){.wp{grid-template-columns:minmax(0, 1fr) auto}}
+.shp{display:none;margin:0;width:clamp(170px, 22vw, 320px);rotate:3deg;background:#fff;padding:10px 10px 34px;box-shadow:0 18px 40px rgba(27,27,51,0.16),0 2px 6px rgba(27,27,51,0.08)}
+.shp img{display:block;width:100%;object-fit:cover}
+.shp img{aspect-ratio:4 / 3}
+@media (min-width: 640px){.shp{display:block}}
+.shp.tall img{aspect-ratio:4 / 5}
+.msnh.wp{align-items:center}
+.hlw{display:grid}
+@media (min-width: 720px){.hlw{grid-template-columns:minmax(0, 1fr) clamp(220px, 30vw, 420px)}}
+.hla{display:none}
+@media (min-width: 720px){.hla{display:block;position:sticky;top:110px;align-self:start;margin:0 var(--pad) var(--sec) 0;aspect-ratio:4 / 5}}
+.hla .pol,.lgp .pol,.lga .pol{position:absolute;background:#fff;padding:10px 10px 34px;box-shadow:0 18px 40px rgba(27,27,51,0.16),0 2px 6px rgba(27,27,51,0.08)}
+.hla .pol img,.lgp .pol img,.lga .pol img{display:block;width:100%;object-fit:cover}
+.hla .pol img,.lgp .pol img,.lga .pol img{aspect-ratio:1 / 1}
+.hla .p1,.lgp .p1,.lga .p1{left:0;top:0;width:76%;rotate:-4deg}
+.hla .p2,.lgp .p2,.lga .p2{right:0;bottom:0;width:56%;rotate:5deg}
+.lgp{display:none}
+@media (min-width: 640px){.lg{grid-template-columns:1fr 1fr;gap:clamp(32px, 6vw, 100px)}.lg .in2{margin:0}.lgp{display:block;position:relative;width:min(100%, 460px);aspect-ratio:1 / 1;justify-self:center}.lgp .p1{width:86%}}
+.lgw{display:grid}
+.lga{display:none}
+@media (min-width: 1024px){.lgw{grid-template-columns:minmax(0, 1fr) clamp(260px, 26vw, 380px)}.lga{display:block;position:sticky;top:120px;align-self:start;aspect-ratio:1 / 1;margin:30px var(--pad) var(--sec) 0}.lga .p1{width:90%}}
+@media (hover: none){.gp li::before{display:none}.vc:hover .vpl{background:var(--ink)}}
+@media (pointer: coarse){.htb button,.tb a,.ch span{min-height:44px}}
+@media (max-width: 899px){.pni{width:100%;height:auto;aspect-ratio:16 / 9;max-height:none;margin:8px 0 14px;rotate:0deg}.sdi{max-width:min(72%, 300px);max-height:24svh}.sdi.fr{width:min(72%, 300px)}}
+@media (orientation: landscape) and (max-height: 540px){.pni{width:min(60%, 440px);aspect-ratio:16 / 9}.sdi{max-width:none;max-height:72%}.sdi.fr{width:30%}}
+@media (min-width: 900px){.pn .pni{top:26px;right:26px;width:min(50%, 560px);height:calc(100% - 52px);aspect-ratio:auto;object-fit:cover;rotate:1.5deg}.pn.on>div{max-width:calc(50% - 44px)}.pn.on>div h3{font-size:clamp(1.6rem, 2.6vw, 2.9rem)}}

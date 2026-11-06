@@ -1,0 +1,24 @@
+.li{position:absolute;pointer-events:none}
+.li svg{width:100%;height:100%;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.rot{display:inline-grid;overflow:hidden;vertical-align:bottom;padding-bottom:.14em;margin-bottom:-.14em}
+.rot>span{grid-area:1/1;display:block;will-change:transform;white-space:nowrap}
+em.rot{display:inline-grid;overflow:hidden}
+em.rot::after{bottom:.03em}
+.fi{position:absolute;width:clamp(34px, 4.4vw, 64px);aspect-ratio:1;border-radius:50%;background:var(--c);border:2.5px solid var(--ink);display:grid;place-items:center;z-index:2;box-shadow:3px 3px 0 var(--ink);pointer-events:none}
+.fi svg{width:56%;height:56%;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width: 767px){.fi{width:34px}.fi:nth-child(n+4){display:none}}
+.sm{--fs:clamp(2rem,5.6vw,5.8rem)}
+.sm p{font-size:var(--fs);line-height:1.06;background:repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--fs)*1.06 - 2px), rgba(47,91,231,0.28) calc(var(--fs)*1.06 - 2px), rgba(47,91,231,0.28) calc(var(--fs)*1.06))}
+.nb{position:relative;max-width:min(100%, 1100px)}
+.nb::before{content:"";position:absolute;left:-14px;top:-12px;bottom:-12px;width:2px;background:rgba(255,122,138,0.6)}
+.pen{position:absolute;right:0;top:0;width:clamp(34px, 5vw, 64px);rotate:-18deg;fill:var(--sun);stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round;z-index:2}
+@media (max-width: 767px){.sm p{font-size:var(--fs)}.sm{--fs:clamp(1.9rem,9.2vw,3.2rem)}}
+@media (max-width: 767px){.nb{padding-right:30px}.pen{right:-6px;width:30px}.capfly{top:22px;right:20px;width:58px}}
+.c-sun{background:#ffe08a}
+.c-sun em.s{color:var(--ink)}
+.cf{position:absolute;width:9px;height:15px;border-radius:2px;pointer-events:none;z-index:4}
+.capfly{position:absolute;right:calc(var(--pad) + 4vw);top:18%;width:clamp(70px, 10vw, 150px);fill:var(--ink);pointer-events:none}
+.btn:active,.rb:active,.pill:active,#mb:active{transform:scale(0.96)}
+.lgf{translate:none}
+.lu path{opacity:0}
+#mn.open a:nth-child(7){transition-delay:.3s}

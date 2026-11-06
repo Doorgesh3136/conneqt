@@ -1,0 +1,20 @@
+/* ---- home page ---- */
+P.problem=function(r){
+G.set(".hsun",{opacity:0,scale:.85});G.set(".birds",{opacity:0});
+G.to(".hsun",{yPercent:-18,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});G.to(".birds",{x:"16vw",y:-70,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+G.to(".sm .dd:first-of-type",{rotation:200,ease:"none",scrollTrigger:{trigger:".sm",start:"top bottom",end:"bottom top",scrub:true}});G.to(".sm .dd:last-of-type",{x:60,ease:"none",scrollTrigger:{trigger:".sm",start:"top bottom",end:"bottom top",scrub:true}});
+var rs=$(".rot>span",r);G.set(rs,{yPercent:120});G.set(".fi",{opacity:0,scale:.4});
+$(".fi").forEach(function(f,i){if(!TOUCHY)G.to(f,{y:"+="+(10+i*3),rotation:i%2?8:-8,duration:2.2+i*.35,yoyo:true,repeat:-1,ease:"sine.inOut"});G.to(f,{yPercent:-(40+i*28),ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}})});
+var hero=$(".hero",r)[0];if(!hero._pm&&matchMedia("(hover:hover)").matches){hero._pm=1;hero.addEventListener("pointermove",function(e){var nx=e.clientX/innerWidth-.5,ny=e.clientY/innerHeight-.5;G.to(".hsun",{x:nx*-34,y:ny*-26,duration:1.2,ease:"power3.out",overwrite:"auto"});G.to(".stk",{x:nx*-26,y:ny*-20,duration:1.2,ease:"power3.out",overwrite:"auto"});$(".fi").forEach(function(f,i){G.to(f,{x:nx*(30+i*12),duration:1.2,ease:"power3.out",overwrite:"auto"})})})}
+var pen=$(".sm .pen")[0],nbp=$(".sm .nb p")[0];if(pen){G.fromTo(pen,{y:0},{y:function(){return nbp.offsetHeight-pen.offsetHeight},duration:1.8,delay:.35,ease:"power1.inOut",scrollTrigger:{trigger:nbp,start:"top 75%",invalidateOnRefresh:true}})}
+var cap=$(".capfly")[0];if(cap){G.set(cap,{opacity:0,y:90,rotation:-30});ST.create({trigger:".cta",start:"top 70%",once:true,onEnter:function(){var tl=G.timeline();tl.to(cap,{opacity:1,y:-60,rotation:300,duration:.7,ease:"power2.out"}).call(function(){var b=cap.getBoundingClientRect();confetti(b.left+b.width/2,b.top+b.height/2,36)},null,"-=.1").to(cap,{y:0,rotation:360,duration:.7,ease:"bounce.out"})}})}
+G.to($(".hero h1",r),{yPercent:-10,opacity:.15,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom 15%",scrub:true}});
+G.to(".stk",{yPercent:-30,rotation:16,ease:"none",scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+var mm=G.matchMedia();mms.push(mm);
+mm.add({d:"(min-width:800px),(orientation:landscape)",m:"(max-width:799px) and (orientation:portrait)"},function(cx){var mob=cx.conditions.m;
+sceneA(mob);
+var xt=G.timeline({scrollTrigger:{trigger:"#xp",pin:true,scrub:.8,start:"top top",end:"+=180%",anticipatePin:1}});
+G.set(".xa",{yPercent:-170});G.set(".xb",{yPercent:170});G.set(".xc",{opacity:0,y:40});
+xt.to(".xi",{scale:1,borderRadius:0,duration:2,ease:"power2.inOut"},0).fromTo(".xi img",{scale:1.6},{scale:1,duration:2,ease:"none"},0).to(".xa,.xb",{yPercent:0,duration:2,ease:"power2.inOut"},0).to(".xc",{opacity:1,y:0,duration:.8,ease:"power2.out"},1.7).to({},{duration:.9});
+var tbB=sceneB(mob),tcB=sceneC(mob),teB=sceneE(mob),dB=tbB.duration(),dC=tcB.duration(),c0=dB+.3,e0=c0+dC;G.set("#vC,#vE",{autoAlpha:0});G.set("#sC .ph1,#sC .ph2",{autoAlpha:0,y:30});G.set("#sC",{backgroundColor:"#ffc4bd"});G.timeline({defaults:{ease:"none"},scrollTrigger:{trigger:"#sC",pin:true,scrub:1,start:"top top",end:"+=720%",anticipatePin:1,invalidateOnRefresh:true}}).add(tbB,0).to("#vB",{autoAlpha:0,scale:.94,duration:.28,ease:"power2.in"},dB).to("#sC .ph0",{autoAlpha:0,y:-30,duration:.22,ease:"power2.in"},dB).to("#sC",{backgroundColor:"#b9ede6",duration:.4},dB+.05).to("#sC .ph1",{autoAlpha:1,y:0,duration:.25,ease:"power2.out"},dB+.22).to("#vC",{autoAlpha:1,duration:.2},dB+.24).add(tcB,c0).to("#vC",{autoAlpha:0,scale:.94,duration:.28,ease:"power2.in"},e0).to("#sC .ph1",{autoAlpha:0,y:-30,duration:.22,ease:"power2.in"},e0).to("#sC",{backgroundColor:"#ffe08a",duration:.4},e0+.05).to("#sC .ph2",{autoAlpha:1,y:0,duration:.25,ease:"power2.out"},e0+.22).to("#vE",{autoAlpha:1,duration:.2},e0+.24).add(teB,e0+.3);sceneD();
+})};

@@ -1,0 +1,29 @@
+/* ===== v10: fit every section on laptop and desktop screens ===== */
+@media (min-width:900px) and (min-height:560px){
+.msn:not(.msn2) h2{font-size:min(4.6vw,8.4vh,7.4rem);max-width:13ch}
+.msn:not(.msn2) .msw{width:min(40vw,62vh,860px)}
+.goal{padding-block:min(5vw,6vh)}
+.goal h2{font-size:min(3.8vw,6.4vh)}
+.goal dl div{padding:min(14px,1.5vh) 0}
+.goal .btn{margin-top:min(24px,2.6vh)}
+.gsl{max-height:56vh;width:min(100%,calc(56vh*.876))}
+.wc .wci{height:min(20vw,24vh)}
+.dn2{min-height:100svh;padding-top:clamp(84px,12vh,120px);padding-bottom:clamp(20px,4vh,48px)}
+.dsteps{margin-bottom:min(30px,2.4vh)}.dsteps span{width:min(38px,5vh);height:min(38px,5vh)}
+.dnk{margin-bottom:min(18px,1.6vh)}
+.dn2 h1{font-size:min(5.2vw,8.6vh);margin-bottom:min(50px,3.6vh)}
+.dstep{gap:min(28px,2.6vh)}
+.dstep>.fl2{margin:0 0 calc(min(28px,2.6vh)*-.5)}
+.dn2 .f label{margin-bottom:4px}
+.dn2 .f input{padding:4px 0 8px;font-size:min(1.3rem,2.6vh)}
+.dnc{width:min(100%,520px,calc(100svh - 160px))}
+.hlh{padding-top:clamp(84px,12vh,130px)!important}
+.hlh h1{font-size:min(6.4vw,9vh)!important}
+.lg h1{font-size:min(17vw,25vh)!important}
+}
+@media (min-width:900px) and (min-height:560px){
+.dstep[data-step="1"]{grid-template-columns:1fr 1fr;column-gap:28px}
+.dstep[data-step="1"]>.fl2,.dstep[data-step="1"]>.ctas,.dstep[data-step="1"]>div:nth-of-type(3){grid-column:1/-1}
+.dn2{padding-bottom:clamp(12px,2.4vh,40px)}
+}
+
