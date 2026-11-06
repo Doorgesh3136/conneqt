@@ -24,7 +24,6 @@
 .rba{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .6s var(--ease)}
 .rbw:hover .rba{transform:translateX(6px)}
 @media (min-width:900px){.cta .rbw{justify-self:end;margin-right:clamp(24px,7vw,150px)}}
-@media (prefers-reduced-motion:reduce){.rbr,.cta .rb{animation:none}}
 @media (min-width:900px){.ft .cl .fl:first-child{display:grid;grid-template-columns:repeat(2,auto);column-gap:40px}}
 @media (min-width:900px) and (min-height:560px){
 .scr{min-height:100vh;min-height:100svh;padding-top:clamp(84px,12vh,130px)!important;padding-bottom:clamp(28px,6vh,72px)!important;margin-top:0!important;margin-bottom:0!important}
@@ -761,9 +760,6 @@ html.lk,html.lk body,html.lk main,html.lk [data-page],html.lk [data-page]>*,html
 .cap{display:block}
 #vB{padding-bottom:calc(var(--bot) + 24px)}
 }
-
-/* reduced motion: loops stop, everything else stays. main.js handles the rest */
-@media (prefers-reduced-motion:reduce){.birds .bd path,.hm-birds .bd path,.bdx,.fi,.hint i,.ft .tp img,.wci .chr,.pn.on .pch,.ea .rb,.rbr{animation:none!important}}
 
 /* if the animation library could not run at all: a tidy static page */
 .ng .rot>span:nth-child(n+2),.ng .fiw,.ng .vwx,.ng #vD{display:none}
