@@ -370,7 +370,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .hm h1{font-size:clamp(2.3rem,calc(var(--fu)*13.4),6rem)}
 .hm-tx>span.lb{margin-bottom:clamp(8px,1.6svh,20px)}
 .hm-tx p{font-size:clamp(.9rem,calc(var(--fu)*4.2),1.35rem);margin:clamp(8px,1.6svh,22px) 0 clamp(10px,2svh,24px)}
-.hm .hint{display:none}
 .hm-chip{font-size:clamp(.72rem,calc(var(--fu)*3.3),1rem);padding:clamp(5px,1svh,10px) clamp(8px,1.5svh,14px);gap:6px}
 .hm-chip i{width:clamp(16px,2.8svh,24px);height:clamp(16px,2.8svh,24px)}
 .hm-chip.c1{left:auto;right:58%;top:44%}
@@ -438,14 +437,12 @@ body:has([data-page][data-free]:not([hidden])) .ft{min-height:0}
 .hint{margin-top:clamp(10px,2.2svh,36px)}
 .sm{--fs:clamp(1.7rem,min(9.2vw,5.6svh),4.4rem)}
 .gap .shd{padding-bottom:clamp(8px,1.8svh,24px)}
-.gap .shp{display:none}
 .gp li{padding:clamp(7px,1.45svh,20px) 0;font-size:clamp(.98rem,calc(var(--fu)*4.7),2rem);gap:clamp(10px,3vw,24px)}
 .gck{width:clamp(26px,5svh,44px)}
 .gpk{padding-top:0}
 .gpl{gap:clamp(6px,1.2svh,14px)}
 
 /* scenes: the header takes its real height and the drawing gets the rest, clear of the dock */
-#sA{--fzw:clamp(130vw,calc((100svh - 430px)*2.276),200vw)}
 .sh2{position:relative;padding:var(--top) var(--pad) 0}
 #sA .sh2{position:absolute}
 .scn{justify-content:flex-start}
@@ -520,6 +517,8 @@ body:has([data-page][data-free]:not([hidden])) .ft{min-height:0}
 .dn2 h1{font-size:clamp(1.75rem,calc(var(--fu)*10.6),4.6rem);max-width:none;margin-bottom:clamp(10px,2.6svh,30px)}
 .dstep{gap:clamp(8px,2svh,24px)}
 .dstep>.fl2{margin:clamp(2px,.8svh,8px) 0 calc(clamp(2px,.8svh,8px)*-1)}
+.dn2 .fm{gap:clamp(4px,1svh,14px)}
+.dn2 .er{font-size:.84rem}
 .dn2 .ctas{justify-self:stretch}
 .dn2 .ctas .btn{flex:1 1 auto}
 .dstep[data-step="1"]{grid-template-columns:1fr 1fr;column-gap:16px}
@@ -572,12 +571,9 @@ body:has([data-page][data-free]:not([hidden])) .ft{min-height:0}
 .ea .rb{justify-self:start}
 }
 
-@media (max-width:799px) and (orientation:portrait) and (max-height:700px){#sA{--fzw:clamp(130vw,calc((100svh - 324px)*2.276),200vw)}}
-@media (max-width:799px) and (orientation:portrait) and (max-height:520px){#sA #vA{margin-top:96px}}
-@media (max-width:799px) and (orientation:portrait){#sA .fz{width:var(--fzw)}}
-@media (max-width:899px) and (orientation:portrait) and (max-height:820px){.dnc{display:none}}
-@media (max-width:899px) and (orientation:portrait) and (max-height:520px){.ft .fl a{min-height:26px}.mt{font-size:.66rem;letter-spacing:.04em}.mt a{min-height:24px}.dnk,.dstep>.fl2,.lgt p,.pn .pch,.pn.on .pch{display:none}}
+@media (max-width:899px) and (orientation:portrait) and (max-height:520px){.ft .fl a{min-height:26px}.mt{font-size:.66rem;letter-spacing:.04em}.mt a{min-height:24px}}
 @media (max-width:639px) and (orientation:portrait){.pa{--mo-lines:4}}
+@media (max-width:359px) and (orientation:portrait){.pa{--mo-lines:5}}
 
 @media (max-width:339px){.hm-chip.c1{right:auto;left:0}.hm-chip.c2{left:auto;right:0}}
 
@@ -642,15 +638,13 @@ body:has([data-page][data-free]:not([hidden])) .ft{min-height:0}
 .sk .sd .sdi.co{grid-column:2;grid-row:1/3;height:100%}
 .sk .sd>.sdt{grid-column:1;grid-row:1}
 .sk .sd>div:last-child{grid-column:1;grid-row:2;align-self:end}
-.sh2 .lb{display:none}
-.sk>.skh .lb{display:none}
 #dock{top:calc(4px + env(safe-area-inset-top,0px));bottom:auto;z-index:101}
 #sA{justify-content:center}
-#sA .sh2{left:auto;right:0;text-align:right;padding-right:calc(var(--pad) + 44px)}
+#sA .sh2{top:auto;bottom:0;left:0;right:auto;max-width:46vw;padding:0 var(--pad) 8px}
 #sA .cdw,#sA .stm{display:block}
 .sAl{display:none}
 #sA .fz{width:min(92%,calc((100svh - var(--top) - 20px)*2.276))}
-#sA #vA{margin-top:0;flex:1 1 0;min-height:0;align-items:center;justify-content:center;padding:calc(var(--top) - 8px) 0 6px}
+#sA #vA{margin-top:0;flex:1 1 0;min-height:0;align-items:center;justify-content:center;padding:calc(var(--top) - 22px) 0 6px}
 #sD{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr auto auto 1fr;column-gap:3vw;padding:0 var(--pad)}
 #sD>.sh2{grid-column:2;grid-row:2;padding:0}
 #sD .sh2 h2{font-size:clamp(1.1rem,6.4vh,1.9rem)}
@@ -663,8 +657,6 @@ body:has([data-page][data-free]:not([hidden])) .ft{min-height:0}
 .vc .lb{grid-column:2;grid-row:4;align-self:start;margin:0;padding:0;font-size:.56rem}
 .vpl{width:clamp(22px,8svh,34px)}
 .vph .vpl{right:2px;bottom:2px}
-.dn2{grid-template-columns:minmax(0,1fr)!important}
-.dnc{display:none}
 .dn2>div:first-child{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);grid-template-rows:auto auto 1fr;column-gap:clamp(18px,4vw,44px);align-items:start}
 .dsteps,.dnk,.dn2 h1{grid-column:1}
 .dn2 .fm,.dn2 .ok{grid-column:2;grid-row:1/4}
@@ -677,3 +669,106 @@ body:has([data-page][data-free]:not([hidden])) .ft{min-height:0}
 .wcc h3{font-size:clamp(.95rem,3.1vh,1.3rem);padding:2px 4px 0}
 .wcc p{font-size:clamp(.78rem,2.5vh,.92rem);line-height:1.3;padding:0 4px}
 }
+
+/* ===== v16: phones show everything the desktop shows, and run light =====
+   Nothing here reaches desktop: every rule is behind a phone-layout query, a touch query, or a class only touch devices get. */
+
+/* the scroll lock: the browser itself refuses to pan, so a busy phone cannot let a swipe slip through. main.js lifts it inside the animated scenes */
+html.lk,html.lk body,html.lk main,html.lk [data-page],html.lk [data-page]>*,html.lk .ft,html.lk nav,html.lk #dock{touch-action:pinch-zoom}
+
+/* off screen, nothing animates (main.js adds .oov on touch devices). It carries on when it comes back */
+.oov,.oov *{animation-play-state:paused!important}
+
+/* GPU layers only while something moves: GSAP adds them for the length of an animation */
+@media (hover:none) and (pointer:coarse){
+.w>.i,.rot>span,.hf,.hf b{will-change:auto}
+/* wing flaps and floating icons: same motion, drawn by the GPU, so they cost the main thread nothing */
+.bd path{animation:none}
+.birds,.hm-birds{aspect-ratio:2/1}
+.bdx{position:absolute;display:block;transform-origin:50% 100%;will-change:transform;animation:flap .42s ease-in-out infinite alternate}
+.bdx svg{display:block;width:100%;overflow:visible}
+.fi{animation:fif var(--ft,2.6s) ease-in-out infinite alternate}
+.fi:nth-child(1){--dy:10px;--dr:-8deg;--ft:2.2s}.fi:nth-child(2){--dy:13px;--dr:8deg;--ft:2.55s}.fi:nth-child(3){--dy:16px;--dr:-8deg;--ft:2.9s}.fi:nth-child(4){--dy:19px;--dr:8deg;--ft:3.25s}.fi:nth-child(5){--dy:22px;--dr:-8deg;--ft:3.6s}
+}
+@keyframes fif{from{translate:0 0;rotate:0deg}to{translate:0 var(--dy,12px);rotate:var(--dr,8deg)}}
+
+@media (max-width:899px),(max-height:559px){
+/* labels and hints stay */
+.sh2 .lb,.sk>.skh .lb{display:block}
+.hm .hint{display:flex;margin-top:clamp(8px,1.6svh,20px)}
+
+/* The problem hero: sun, globe, icons and birds all inside the screen */
+.hero{--r:calc(var(--d)/2 + 4px);--fs:clamp(30px,calc(var(--d)*.19),50px)}
+.hero>.hsun{left:calc(var(--cx) - var(--d)/2);right:auto;top:calc(var(--cy) - var(--d)/2);width:var(--d);translate:none}
+.hero>.stk{display:block;left:calc(var(--cx) - var(--d)*.23);right:auto;top:calc(var(--cy) - var(--d)*.31);width:calc(var(--d)*.46);translate:none}
+.hero>.birds{left:calc(var(--cx) + var(--d)*.2);right:auto;top:calc(var(--cy) - var(--d)*.56);width:calc(var(--d)*.34);translate:none}
+.hero>.fiw{display:block;position:absolute;inset:0;z-index:2;translate:none}
+.hero>.fiw>.fi{display:grid;width:var(--fs);right:auto!important}
+.hero>.fiw>.fi:nth-child(1){left:calc(var(--cx) - var(--r)*.97 - var(--fs)/2)!important;top:calc(var(--cy) - var(--r)*.24 - var(--fs)/2)!important}
+.hero>.fiw>.fi:nth-child(2){left:calc(var(--cx) + var(--r)*.8 - var(--fs)/2)!important;top:calc(var(--cy) + var(--r)*.58 - var(--fs)/2)!important}
+.hero>.fiw>.fi:nth-child(3){left:calc(var(--cx) - var(--r)*.62 - var(--fs)/2)!important;top:calc(var(--cy) - var(--r)*.78 - var(--fs)/2)!important}
+.hero>.fiw>.fi:nth-child(4){left:calc(var(--cx) + var(--r)*.94 - var(--fs)/2)!important;top:calc(var(--cy) - var(--r)*.34 - var(--fs)/2)!important}
+.hero>.fiw>.fi:nth-child(5){left:calc(var(--cx) - var(--r)*.9 - var(--fs)/2)!important;top:calc(var(--cy) + var(--r)*.42 - var(--fs)/2)!important}
+
+/* the small photo beside "fragmented" */
+.gap .shd.wp{grid-template-columns:minmax(0,1fr) auto;gap:clamp(8px,3vw,24px);align-items:start}
+.gap .shp{display:block;width:clamp(74px,calc(var(--fu)*25),210px);padding:5px 5px 16px}
+}
+
+/* upright phones and tablets */
+@media (max-width:899px) and (orientation:portrait){
+.hero{justify-content:flex-start;--vis:34svh;--d:min(var(--vis),72vw,560px);--cx:50vw;--cy:calc(100svh - var(--bot) - var(--vis)/2)}
+
+/* donor picture: the three students walk in a row across the space left */
+.dnc{--dc:clamp(84px,calc(100svh - var(--top) - var(--bot) - var(--fu)*100),300px);width:100%;max-width:560px;height:var(--dc);aspect-ratio:auto}
+.dnc .cut{top:0;bottom:auto;height:100%;width:auto;max-width:none}
+.dnc .q1{left:6%}
+.dnc .q2{left:38%;right:auto}
+.dnc .q3{left:70%}
+.dnc .dsun{left:50%;right:auto;top:-4%;height:108%;width:auto;translate:-50% 0}
+}
+
+/* home hero: the two buttons share a row, the picture gets the height */
+@media (min-width:360px) and (max-width:639px) and (orientation:portrait){
+.hm .ctas{flex-wrap:nowrap;gap:8px}
+.hm .ctas .btn{flex:1 1 auto;padding:0 10px;font-size:clamp(.62rem,2.8vw,.74rem);letter-spacing:.07em;white-space:nowrap}
+}
+
+/* phones held upright: the map gets the space between title and labels, and the labels keep their descriptions */
+@media (max-width:799px) and (orientation:portrait){
+#sA .sh2{position:relative}
+#sA #vA{flex:1 1 0;min-height:0;margin:0;padding:clamp(3px,1svh,10px) 0;container-type:size;align-items:center;justify-content:flex-start}
+#sA .fz{width:min(200vw,calc(100cqh*2.276))}
+.sAl{position:relative;left:auto;right:auto;bottom:auto;flex:none;margin:0 var(--pad) var(--bot);gap:clamp(5px,1svh,8px)}
+.sAc{padding:clamp(5px,1.1svh,10px) 12px}
+.sAc span{display:block;font-size:clamp(.72rem,calc(var(--fu)*3.3),.84rem);line-height:1.26}
+}
+
+/* phones on their side */
+@media (orientation:landscape) and (max-height:559px){
+.hero{--d:min(calc(100svh - var(--top) - var(--bot)),38vw);--cx:calc(100vw - var(--pad) - var(--d)/2 - 16px);--cy:calc(var(--top) + (100svh - var(--top) - var(--bot))/2)}
+.hero h1.h1n,.hr{max-width:calc(100vw - var(--pad)*2 - var(--d) - 34px)}
+.hero h1.h1n{font-size:clamp(1.25rem,7.6vh,2.3rem)}
+.hero>.lb{margin-bottom:clamp(4px,1.4vh,10px)}
+.hr{margin-top:clamp(5px,1.6vh,12px)}
+.hr p{font-size:clamp(.8rem,3.7vh,1rem);line-height:1.4}
+.hero .hint{margin-top:clamp(4px,1.4vh,10px)}
+.dn2{grid-template-columns:minmax(0,1fr) auto!important}
+.dnc{display:block;--dc:calc(100svh - var(--top) - var(--bot));height:var(--dc);width:auto;aspect-ratio:1/1.05;max-width:26vw}
+.cd span,.cd b{display:block}
+.cd span{font-size:.66rem;line-height:1.22}
+.cdc{width:clamp(116px,20vw,170px)}
+.cap{display:block}
+#vB{padding-bottom:calc(var(--bot) + 24px)}
+}
+
+/* reduced motion: loops stop, everything else stays. main.js handles the rest */
+@media (prefers-reduced-motion:reduce){.bd path,.bdx,.fi,.hint i,.ft .tp img,.wci .chr,.pn.on .pch,.ea .rb,.rbr{animation:none!important}}
+
+/* if the animation library could not run at all: a tidy static page */
+.ng .rot>span:nth-child(n+2),.ng .fiw,.ng .vwx,.ng #vD{display:none}
+.ng .shx{display:block}
+.ng .shx>div{padding-bottom:24px}
+.ng .stps{height:auto}
+.ng .stps span{position:static;display:block;white-space:normal}
+.ng #sA .sh2{position:relative}
