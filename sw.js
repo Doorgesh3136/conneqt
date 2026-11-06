@@ -2,8 +2,8 @@
    Pages: network first, so a published update always arrives. Images, fonts, libraries: cache first.
    CSS and JS carry ?v= in index.html: bump it (and V below) on each publish.
    To switch this off everywhere, replace this file with one that calls self.registration.unregister(). */
-var V = 'cq-18';
-var CORE = ['index.html', 'assets/css/style.css?v=18', 'assets/js/main.js?v=18', 'assets/vendor/gsap.min.js', 'assets/vendor/ScrollTrigger.min.js', 'assets/vendor/lenis.min.js', 'assets/fonts/fonts.css?v=18', 'assets/img/old-hero.webp'];
+var V = 'cq-19';
+var CORE = ['index.html', 'assets/css/style.css?v=19', 'assets/js/main.js?v=19', 'assets/vendor/gsap.min.js', 'assets/vendor/ScrollTrigger.min.js', 'assets/vendor/lenis.min.js', 'assets/fonts/fonts.css?v=19', 'assets/img/old-hero.webp'];
 
 self.addEventListener('install', function (e) {
   self.skipWaiting();
@@ -48,7 +48,7 @@ self.addEventListener('fetch', function (e) {
     return;
   }
 
-  if (/\/assets\/(img|fonts|vendor)\//.test(u.pathname)) {
+  if (/\/assets\/(img|icons|fonts|vendor)\//.test(u.pathname)) {
     e.respondWith(caches.match(r).then(function (hit) {
       return hit || fetch(r).then(function (res) { return store(r, res); });
     }));

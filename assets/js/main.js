@@ -311,8 +311,7 @@ tl.to(".lu",{opacity:0,duration:.3},">").add(function(){G.killTweensOf(ics);G.to
 .to(".lgf",{left:function(){var n=$("#nv .logo")[0].getBoundingClientRect();return n.left+n.width/2},top:function(){var n=$("#nv .logo")[0].getBoundingClientRect();return n.top+n.height/2},width:function(){return $("#nv .logo")[0].getBoundingClientRect().width},duration:1.3,ease:"power3.inOut"},">")
 .to(ld,{yPercent:-100,duration:1.1,ease:"expo.inOut"},"<+.15")
 .to(pb.slice().reverse(),{yPercent:-100,duration:1,ease:"expo.inOut",stagger:.1},"<+.14").call(done,null,"-=.95").call(function(){var g=$("body>.lgf")[0];if(g)g.remove()});
-if(TOUCHY)try{if(localStorage.cq)tl.timeScale(2.2);localStorage.cq=1}catch(e){}
-ld.addEventListener("pointerdown",function(){tl.timeScale(3.5)})}
+}
 addEventListener("load",function(){if(!TOUCHY)ST.refresh();else{var h1=H.scrollHeight;if(h1!==lastDocH)ST.refresh();lastDocH=h1}});
 var lastDocH=H.scrollHeight;
 /* touch: whatever is off screen stops animating until it comes back */

@@ -1,0 +1,28 @@
+{
+  "name": "Conneqt",
+  "short_name": "Conneqt",
+  "description": "The transparent platform connecting donors with verified students worldwide.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#fbf6ef",
+  "theme_color": "#ffcf3f",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
