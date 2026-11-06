@@ -3,11 +3,11 @@ var SL=!!(navigator.connection&&(navigator.connection.saveData||/2g/.test(naviga
 var $=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
 $("img[data-src]").forEach(function(i){var s=$(i.dataset.src)[0];if(s)i.src=s.src});
 var G=window.gsap,ST=window.ScrollTrigger,R=matchMedia("(prefers-reduced-motion:reduce)").matches,FX=!!(G&&ST);
-/* R = the visitor asked for reduced motion (some tablets do this on battery saver). The site still works in full; only motion that plays by itself goes: no intro, page wipe or loops, and reveals finish at once. Scenes still follow their own scrolling. */
+/* R = the visitor asked for reduced motion (some tablets do this on battery saver). The site still works in full and the intro plays as for everyone else, by the client's choice. After it, only motion that plays by itself goes: no page wipe or loops, and reveals finish at once. Scenes still follow their own scrolling. */
 var H=document.documentElement,ld=$("#ld")[0],nv=$("#nv")[0],pt=$("#pt")[0],NSV="http://www.w3.org/2000/svg";
 if(!FX){H.classList.add("ng");H.classList.remove("lk")}
 /* touch devices only: everything guarded by TOUCHY leaves desktop untouched */
-var TOUCHY=matchMedia("(hover:none) and (pointer:coarse)").matches,loading=!!ld&&FX&&!R,iC=null,ccN=0;
+var TOUCHY=matchMedia("(hover:none) and (pointer:coarse)").matches,loading=!!ld&&FX,iC=null,ccN=0;
 /* ScrollTrigger keeps an empty loop running for ever to work around a repaint quirk in Firefox. On a phone it wakes the main thread every frame for nothing, so that one loop (and only that one) is not rescheduled */
 if(TOUCHY&&!/Firefox/.test(navigator.userAgent)){var raf0=window.requestAnimationFrame;window.requestAnimationFrame=function(f){return f.name==="_rafBugFix"?0:raf0.call(window,f)}}
 var routes={home:"home","become-a-donor":"donor",problem:"problem","how-it-works":"how",partners:"partners","early-access":"early",login:"login",help:"help",privacy:"legal",terms:"legal",impressum:"legal"};
@@ -243,7 +243,7 @@ function onHist(){var n=location.hash.slice(1)||"home";if(routes[n]&&n!==cur)nav
 /* boot */
 var first="home";try{if("scrollRestoration" in history)history.scrollRestoration="manual";history.replaceState(null,"","#home")}catch(e){}
 if(!FX){if(ld)ld.remove();show(first);build(first);addEventListener("scroll",function(){var m=H.scrollHeight-innerHeight;var pr=m>0?scrollY/m:0;$("#pg i")[0].style.transform="scaleX("+pr+")";$("#pg b")[0].style.left=pr*100+"%"},{passive:true});return}
-G.registerPlugin(ST);ST.config({ignoreMobileResize:true});if(R)G.globalTimeline.timeScale(20);
+G.registerPlugin(ST);ST.config({ignoreMobileResize:true});
 if(window.Lenis){lenis=new Lenis({duration:1.3,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))},smoothWheel:!R});lenis.on("scroll",ST.update);/* touch scrolling is native, so the smooth-scroll loop only runs while the page is being moved for you: a resting phone really rests. Its clock is reset first, or it would treat the sleep as elapsed time and jump */
 if(TOUCHY){var lrOn=false,lrEnd=0,lrF=function(){lenis.raf(performance.now());if(performance.now()<lrEnd)requestAnimationFrame(lrF);else lrOn=false};lrKick=function(ms){lrEnd=Math.max(lrEnd,performance.now()+ms);if(!lrOn){lrOn=true;lenis.raf(performance.now());requestAnimationFrame(lrF)}};addEventListener("wheel",function(){lrKick(2000)},{passive:true})}else G.ticker.add(function(t){lenis.raf(t*1000)});G.ticker.lagSmoothing(250,33);lenis.stop();lenis.on("scroll",function(e){nv.classList.toggle("hide",e.direction===1&&e.scroll>240)})}
 show(first);build(first);glob();
@@ -285,9 +285,9 @@ addEventListener("keydown",function(e){if(!ok()||/INPUT|TEXTAREA|SELECT/.test((e
 if(matchMedia("(hover:hover)").matches)$(".rbw").forEach(function(w){var b=$(".rb",w)[0];w.addEventListener("pointermove",function(e){var r=w.getBoundingClientRect();G.to(b,{x:(e.clientX-r.left-r.width/2)*.28,y:(e.clientY-r.top-r.height/2)*.28,duration:.6,ease:"power3.out",overwrite:"auto"})});w.addEventListener("pointerleave",function(){G.to(b,{x:0,y:0,duration:1.1,ease:"elastic.out(1,.4)",overwrite:"auto"})})});
 /* loader: a sunrise over many languages */
 var words=["Education","Éducation","Educación","शिक्षा","التعليم","教育","Ledikasyon"],wl=["en","fr","es","hi","ar","zh","mfe"],lw=$(".lw2")[0],N=words.length,T=.44;
-function done(){loading=false;scrollTo(0,0);if(lenis){lenis.scrollTo(0,{immediate:true,force:true});lenis.start()}heroIn();lkAfter()}
+function calm(){if(R)G.globalTimeline.timeScale(20)}function done(){loading=false;scrollTo(0,0);if(lenis){lenis.scrollTo(0,{immediate:true,force:true});lenis.start()}heroIn();lkAfter()}
 if(ld)ld.style.animation="none";
-if(SL||R||!ld){if(ld)ld.remove();done()}else{
+if(SL||!ld){if(ld)ld.remove();calm();done()}else{
 words.forEach(function(w,i){var s=document.createElement("span");s.textContent=w;s.lang=wl[i];if(wl[i]==="ar")s.dir="rtl";lw.appendChild(s)});
 var ws=$(".lw2 span"),cnt=$("#cnt")[0],c={v:0},W=innerWidth,sun=$(".lsun")[0],bds=[],lu=$(".lu path")[0],rnd=G.utils.random;
 G.set("#pt",{display:"block"});G.set(pb,{yPercent:0});G.set(pc,{opacity:0});
@@ -297,7 +297,7 @@ G.set(ws,{yPercent:130});G.set(sun,{yPercent:104});G.set(".lgf",{xPercent:-50,yP
 bds.forEach(function(bd,i){G.fromTo(bd,{x:-90},{x:W+90,duration:3.8+i*.3,delay:.1+i*.32,ease:"none",repeat:-1});G.to(bd,{y:i%2?-22:22,duration:.8+i*.12,yoyo:true,repeat:-1,ease:"sine.inOut"})});
 ics.forEach(function(d,i){G.fromTo(d,{y:0,opacity:0,rotation:-25},{y:-rnd(180,320),opacity:.85,rotation:rnd(10,40),duration:rnd(2.6,3.6),delay:.3+i*.28,ease:"sine.out"});G.to(d,{opacity:0,duration:.8,delay:1.8+i*.28})});
 function setc(v){if(cnt)cnt.textContent=Math.round(v)}
-var tl=G.timeline({delay:.15,onComplete:function(){G.killTweensOf(bds);G.killTweensOf(ics);ld.remove();G.set("#pt",{display:"none"})}});
+var tl=G.timeline({delay:.15,onComplete:function(){G.killTweensOf(bds);G.killTweensOf(ics);ld.remove();G.set("#pt",{display:"none"});G.delayedCall(2.4,calm)}});
 tl.fromTo(sun,{yPercent:104},{yPercent:26,duration:N*T+1,ease:"power2.out"},0).to(c,{v:92,duration:N*T+.8,ease:"none",onUpdate:function(){setc(c.v)}},0);
 ws.forEach(function(w,i){tl.to(w,{yPercent:0,duration:.38,ease:"expo.out"},i*T);tl.to(w,{yPercent:-130,duration:.28,ease:"expo.in"},i*T+.36);});tl.set(lu,{opacity:1},.12).fromTo(lu,{strokeDashoffset:1.001},{strokeDashoffset:0,duration:.6,ease:"power2.out",immediateRender:false},.12).to(lu,{strokeDashoffset:-1.001,duration:.45,ease:"power2.in"},(N-1)*T+.3).set(lu,{opacity:0},(N-1)*T+.76);
 tl.fromTo(".lgf",{opacity:0,y:30,scale:.94},{opacity:1,y:0,scale:1,duration:.8,ease:"expo.out"},N*T+.12);
