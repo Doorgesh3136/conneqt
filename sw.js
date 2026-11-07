@@ -3,8 +3,8 @@
    Pages: network first, so a published update always arrives. Images, fonts, libraries: cache first.
    tools/build.mjs sets the version below and the ?v= in index.html on every build.
    To switch this off everywhere, replace this file with one that calls self.registration.unregister(). */
-var V = 'cq-382287c6';
-var CORE = ['index.html', 'assets/css/style.css?v=382287c6', 'assets/js/main.js?v=382287c6', 'assets/vendor/gsap.min.js', 'assets/vendor/ScrollTrigger.min.js', 'assets/vendor/lenis.min.js', 'assets/fonts/fonts.css?v=382287c6', 'assets/images/home/hero.webp'];
+var V = 'cq-040b786b';
+var CORE = ['index.html', 'assets/css/style.css?v=040b786b', 'assets/js/main.js?v=040b786b', 'assets/vendor/gsap.min.js', 'assets/vendor/ScrollTrigger.min.js', 'assets/vendor/lenis.min.js', 'assets/fonts/fonts.css?v=040b786b', 'assets/images/home/hero.webp'];
 
 self.addEventListener('install', function (e) {
   self.skipWaiting();

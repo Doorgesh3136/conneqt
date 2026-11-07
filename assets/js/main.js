@@ -197,6 +197,11 @@ $("#dnx")[0].addEventListener("click",function(){var bad=[];$("[required]",s1).f
 $("#dbk")[0].addEventListener("click",function(){step(1)});
 $("input",s1).forEach(function(i){i.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();$("#dnx")[0].click()}})});
 form(df,"#dok",{s:"Become a donor — ConneQt"});
+/* some in-app browsers cannot open a mail app: the same subject and body can be copied and sent by hand */
+var okc=$("#dok .okc")[0],okT=0;if(okc)okc.addEventListener("click",function(){var u=$("#dok a.btn")[0].getAttribute("href"),q={},to=decodeURIComponent(u.replace(/^mailto:/,"").split("?")[0]);(u.split("?")[1]||"").split("&").forEach(function(kv){var i=kv.indexOf("=");if(i>0)q[kv.slice(0,i)]=decodeURIComponent(kv.slice(i+1))});var t="To: "+to+"\nSubject: "+(q.subject||"")+"\n\n"+(q.body||"");
+function fb(){var ta=document.createElement("textarea"),ok=false;ta.value=t;ta.setAttribute("readonly","");ta.style.cssText="position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px";document.body.appendChild(ta);ta.select();try{ta.setSelectionRange(0,t.length);ok=document.execCommand("copy")}catch(e){}ta.remove();okc.focus({preventScroll:true});return ok}
+function said(ok){okc.textContent=ok?"Copied":"Copy failed";clearTimeout(okT);okT=setTimeout(function(){okc.textContent="Copy details"},2200)}
+try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(function(){said(true)},function(){said(fb())});else said(fb())}catch(e){said(fb())}});
 })();
 function numbersBox(r){$(".nbb",r).forEach(function(box){var bs=$("b[data-v]",box),tws=[];bs.forEach(function(b){var p=b.dataset.p||"",su=b.dataset.s||"",o={v:0};b.textContent=p+"0"+su;tws.push(G.to(o,{v:+b.dataset.v,duration:2,ease:"power2.out",paused:true,onUpdate:function(){b.textContent=p+Math.round(o.v)+su}}))});
 ST.create({trigger:box,start:"top 85%",once:true,refreshPriority:-1,onEnter:function(){tws.forEach(function(t){t.play()})}});
@@ -233,17 +238,20 @@ var o={p:0},CT=G.timeline({onComplete:function(){busy=false;lkAfter();if(pend&&p
 .to(pc,{opacity:0,y:-20,duration:.35,ease:"power2.in"},">+.15")
 .to(pb.slice().reverse(),{yPercent:-100,duration:.9,ease:"expo.inOut",stagger:.09},">-.1")
 .call(after,null,"-=.8").set("#pt",{display:"none"})}
-var lkHold=function(){},lkAfter=function(){};var pend=null;function navigate(name,pop){if(busy){pend=name;return}pend=null;var same=routes[name]===routes[cur];try{if(location.hash!=="#"+name){if(pop)history.replaceState(null,"","#"+name);else history.pushState(null,"","#"+name)}}catch(e){}
+var lkHold=function(){},lkAfter=function(){};var pend=null;/* while a wipe or the intro is running, a navigation waits its turn and plays once they have finished */
+function held(){return busy||loading||(!!ld&&ld.isConnected)}function navigate(name,pop){if(held()){pend=name;return}pend=null;var same=routes[name]===routes[cur];try{if(location.hash!=="#"+name){if(pop)history.replaceState(null,"","#"+name);else history.pushState(null,"","#"+name)}}catch(e){}
 if(!FX){show(name);build(name);return}
 if(same&&cur){show(name);scrollTo(0,0);if(lenis)lenis.scrollTo(0,{immediate:true,force:true});ST.refresh();return}
 cover(name,function(){show(name);build(name)},function(){if(lenis)lenis.start();heroIn();lkAfter()})}
 document.addEventListener("click",function(e){var a=e.target.closest('a[href^="#"]');if(!a)return;var n=a.getAttribute("href").slice(1);if(routes[n]){e.preventDefault();if(mn.classList.contains("open"))tg(false);navigate(n)}});
-function onHist(){var n=location.hash.slice(1)||"home";if(routes[n]&&n!==cur)navigate(n,1)}addEventListener("popstate",onHist);addEventListener("hashchange",onHist);
+function onHist(){var n=location.hash.slice(1)||"home";if(!routes[n])return;if(mn.classList.contains("open"))tg(false);if(held()){pend=n;return}if(n!==cur)navigate(n,1)}addEventListener("popstate",onHist);addEventListener("hashchange",onHist);
 /* boot */
 var first="home";try{if("scrollRestoration" in history)history.scrollRestoration="manual";history.replaceState(null,"","#home")}catch(e){}
 if(!FX){if(ld)ld.remove();show(first);build(first);addEventListener("scroll",function(){var m=H.scrollHeight-innerHeight;var pr=m>0?scrollY/m:0;$("#pg i")[0].style.transform="scaleX("+pr+")";$("#pg b")[0].style.left=pr*100+"%"},{passive:true});return}
 G.registerPlugin(ST);ST.config({ignoreMobileResize:true});
-if(window.Lenis){lenis=new Lenis({duration:1.3,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))},smoothWheel:true});lenis.on("scroll",ST.update);/* touch scrolling is native, so the smooth-scroll loop only runs while the page is being moved for you: a resting phone really rests. Its clock is reset first, or it would treat the sleep as elapsed time and jump */
+/* if the smooth-scroll library is missing or cannot start (an old phone, a failed download), the page scrolls natively instead of staying locked */
+if(window.Lenis){try{lenis=new Lenis({duration:1.3,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))},smoothWheel:true})}catch(e){lenis=null}}if(!lenis)H.classList.remove("lk");
+if(lenis){lenis.on("scroll",ST.update);/* touch scrolling is native, so the smooth-scroll loop only runs while the page is being moved for you: a resting phone really rests. Its clock is reset first, or it would treat the sleep as elapsed time and jump */
 if(TOUCHY){var lrOn=false,lrEnd=0,lrF=function(){lenis.raf(performance.now());if(performance.now()<lrEnd)requestAnimationFrame(lrF);else lrOn=false};lrKick=function(ms){lrEnd=Math.max(lrEnd,performance.now()+ms);if(!lrOn){lrOn=true;lenis.raf(performance.now());requestAnimationFrame(lrF)}};addEventListener("wheel",function(){lrKick(2000)},{passive:true})}else G.ticker.add(function(t){lenis.raf(t*1000)});G.ticker.lagSmoothing(250,33);lenis.stop();lenis.on("scroll",function(e){nv.classList.toggle("hide",e.direction===1&&e.scroll>240)})}
 show(first);build(first);glob();
 /* ---- v4: one section per scroll (desktop) + tempting join button ---- */
@@ -253,7 +261,7 @@ function stops(){return iC||(iC=info())}
 /* inside an animated scene the page scrolls natively; everywhere else the browser is told not to pan at all */
 function zoomed(){return !!window.visualViewport&&visualViewport.scale>1.02}
 function lkSync(){if(!TOUCHY)return;if(busy||loading){lkSet(true);return}var I=stops(),y=lenis.scroll,i,free=!I||typing()||zoomed();if(I)for(i=0;i<I.fr.length;i++)if(y>I.fr[i][0]-3&&y<I.fr[i][1]+3)free=true;lkSet(!free)}
-lkHold=function(){if(TOUCHY)lkSet(true)};lkAfter=function(){iC=null;lkSync()};if(TOUCHY){ST.addEventListener("refresh",function(){iC=null;lkSync()});addEventListener("focusin",lkSync);if(window.visualViewport)visualViewport.addEventListener("resize",lkSync);addEventListener("focusout",function(){setTimeout(lkSync,60)})}
+lkHold=function(){if(TOUCHY)lkSet(true)};lkAfter=function(){iC=null;lkSync()};if(TOUCHY){ST.addEventListener("refresh",function(){iC=null;lkSync()});addEventListener("focusin",lkSync);if(window.visualViewport)visualViewport.addEventListener("resize",lkSync);addEventListener("focusout",function(){setTimeout(lkSync,60);/* once the keyboard has closed, come back to a stop */clearTimeout(idle);idle=setTimeout(settle,300)})}
 var ts=null,SN=matchMedia("(min-width:900px) and (min-height:560px)"),anim=false,lastT=0,lastAbs=0,lastDir=0,doneT=0,idle=0;
 var TOUCH=matchMedia("(hover:none) and (pointer:coarse)");function ok(){return (SN.matches||TOUCH.matches)&&!busy&&!mn.classList.contains("open")}
 function info(){var pg=$("[data-page]:not([hidden])")[0];if(!pg||pg.hasAttribute("data-free"))return null;var vh=innerHeight,max=Math.max(0,document.documentElement.scrollHeight-vh),st=[],fr=[],y0=scrollY;
@@ -298,7 +306,7 @@ G.set(ws,{yPercent:130});G.set(sun,{yPercent:104});G.set(".lgf",{xPercent:-50,yP
 bds.forEach(function(bd,i){G.fromTo(bd,{x:-90},{x:W+90,duration:3.8+i*.3,delay:.1+i*.32,ease:"none",repeat:-1});G.to(bd,{y:i%2?-22:22,duration:.8+i*.12,yoyo:true,repeat:-1,ease:"sine.inOut"})});
 ics.forEach(function(d,i){G.fromTo(d,{y:0,opacity:0,rotation:-25},{y:-rnd(180,320),opacity:.85,rotation:rnd(10,40),duration:rnd(2.6,3.6),delay:.3+i*.28,ease:"sine.out"});G.to(d,{opacity:0,duration:.8,delay:1.8+i*.28})});
 function setc(v){if(cnt)cnt.textContent=Math.round(v)}
-var tl=G.timeline({delay:.15,onComplete:function(){G.killTweensOf(bds);G.killTweensOf(ics);ld.remove();G.set("#pt",{display:"none"})}});
+var tl=G.timeline({delay:.15,onComplete:function(){G.killTweensOf(bds);G.killTweensOf(ics);ld.remove();G.set("#pt",{display:"none"});if(pend&&pend!==cur){var n=pend;pend=null;navigate(n,1)}else pend=null}});
 tl.fromTo(sun,{yPercent:104},{yPercent:26,duration:N*T+1,ease:"power2.out"},0).to(c,{v:92,duration:N*T+.8,ease:"none",onUpdate:function(){setc(c.v)}},0);
 ws.forEach(function(w,i){tl.to(w,{yPercent:0,duration:.38,ease:"expo.out"},i*T);tl.to(w,{yPercent:-130,duration:.28,ease:"expo.in"},i*T+.36);});tl.set(lu,{opacity:1},.12).fromTo(lu,{strokeDashoffset:1.001},{strokeDashoffset:0,duration:.6,ease:"power2.out",immediateRender:false},.12).to(lu,{strokeDashoffset:-1.001,duration:.45,ease:"power2.in"},(N-1)*T+.3).set(lu,{opacity:0},(N-1)*T+.76);
 tl.fromTo(".lgf",{opacity:0,y:30,scale:.94},{opacity:1,y:0,scale:1,duration:.8,ease:"expo.out"},N*T+.12);

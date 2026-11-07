@@ -10,9 +10,10 @@ var o={p:0},CT=G.timeline({onComplete:function(){busy=false;lkAfter();if(pend&&p
 .to(pc,{opacity:0,y:-20,duration:.35,ease:"power2.in"},">+.15")
 .to(pb.slice().reverse(),{yPercent:-100,duration:.9,ease:"expo.inOut",stagger:.09},">-.1")
 .call(after,null,"-=.8").set("#pt",{display:"none"})}
-var lkHold=function(){},lkAfter=function(){};var pend=null;function navigate(name,pop){if(busy){pend=name;return}pend=null;var same=routes[name]===routes[cur];try{if(location.hash!=="#"+name){if(pop)history.replaceState(null,"","#"+name);else history.pushState(null,"","#"+name)}}catch(e){}
+var lkHold=function(){},lkAfter=function(){};var pend=null;/* while a wipe or the intro is running, a navigation waits its turn and plays once they have finished */
+function held(){return busy||loading||(!!ld&&ld.isConnected)}function navigate(name,pop){if(held()){pend=name;return}pend=null;var same=routes[name]===routes[cur];try{if(location.hash!=="#"+name){if(pop)history.replaceState(null,"","#"+name);else history.pushState(null,"","#"+name)}}catch(e){}
 if(!FX){show(name);build(name);return}
 if(same&&cur){show(name);scrollTo(0,0);if(lenis)lenis.scrollTo(0,{immediate:true,force:true});ST.refresh();return}
 cover(name,function(){show(name);build(name)},function(){if(lenis)lenis.start();heroIn();lkAfter()})}
 document.addEventListener("click",function(e){var a=e.target.closest('a[href^="#"]');if(!a)return;var n=a.getAttribute("href").slice(1);if(routes[n]){e.preventDefault();if(mn.classList.contains("open"))tg(false);navigate(n)}});
-function onHist(){var n=location.hash.slice(1)||"home";if(routes[n]&&n!==cur)navigate(n,1)}addEventListener("popstate",onHist);addEventListener("hashchange",onHist);
+function onHist(){var n=location.hash.slice(1)||"home";if(!routes[n])return;if(mn.classList.contains("open"))tg(false);if(held()){pend=n;return}if(n!==cur)navigate(n,1)}addEventListener("popstate",onHist);addEventListener("hashchange",onHist);

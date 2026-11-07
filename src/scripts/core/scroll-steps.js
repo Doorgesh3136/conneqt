@@ -5,7 +5,7 @@ function stops(){return iC||(iC=info())}
 /* inside an animated scene the page scrolls natively; everywhere else the browser is told not to pan at all */
 function zoomed(){return !!window.visualViewport&&visualViewport.scale>1.02}
 function lkSync(){if(!TOUCHY)return;if(busy||loading){lkSet(true);return}var I=stops(),y=lenis.scroll,i,free=!I||typing()||zoomed();if(I)for(i=0;i<I.fr.length;i++)if(y>I.fr[i][0]-3&&y<I.fr[i][1]+3)free=true;lkSet(!free)}
-lkHold=function(){if(TOUCHY)lkSet(true)};lkAfter=function(){iC=null;lkSync()};if(TOUCHY){ST.addEventListener("refresh",function(){iC=null;lkSync()});addEventListener("focusin",lkSync);if(window.visualViewport)visualViewport.addEventListener("resize",lkSync);addEventListener("focusout",function(){setTimeout(lkSync,60)})}
+lkHold=function(){if(TOUCHY)lkSet(true)};lkAfter=function(){iC=null;lkSync()};if(TOUCHY){ST.addEventListener("refresh",function(){iC=null;lkSync()});addEventListener("focusin",lkSync);if(window.visualViewport)visualViewport.addEventListener("resize",lkSync);addEventListener("focusout",function(){setTimeout(lkSync,60);/* once the keyboard has closed, come back to a stop */clearTimeout(idle);idle=setTimeout(settle,300)})}
 var ts=null,SN=matchMedia("(min-width:900px) and (min-height:560px)"),anim=false,lastT=0,lastAbs=0,lastDir=0,doneT=0,idle=0;
 var TOUCH=matchMedia("(hover:none) and (pointer:coarse)");function ok(){return (SN.matches||TOUCH.matches)&&!busy&&!mn.classList.contains("open")}
 function info(){var pg=$("[data-page]:not([hidden])")[0];if(!pg||pg.hasAttribute("data-free"))return null;var vh=innerHeight,max=Math.max(0,document.documentElement.scrollHeight-vh),st=[],fr=[],y0=scrollY;

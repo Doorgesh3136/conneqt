@@ -10,3 +10,7 @@
 /* the error line has its place reserved, so showing it moves nothing */
 .dn2 .er{min-height:1.6em}
 
+/* the thank-you's fallback line, for browsers that cannot open a mail app: the address to copy by hand, or the whole email */
+.ok p.okx,.dn2 .ok p.okx{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;max-width:none;margin:16px 0 0;font-size:.88rem;line-height:1.4}
+.okx .okm{font-weight:600;-webkit-user-select:all;user-select:all;overflow-wrap:anywhere}
+.ok .okx .btn{height:42px;padding:0 20px;font-family:inherit;font-size:.82rem}

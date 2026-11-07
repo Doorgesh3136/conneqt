@@ -1,4 +1,4 @@
-#ld{position:fixed;inset:0;z-index:300;background:var(--sky);clip-path:inset(0% 0% 0% 0%);overflow:hidden;animation:ldf .01s 9s forwards}
+#ld{position:fixed;inset:0;z-index:300;background:var(--sky);clip-path:inset(0% 0% 0% 0%);overflow:hidden;animation:ldf .01s 25s forwards}
 @keyframes ldf{to{opacity:0;visibility:hidden}}
 .lsun{position:absolute;left:50%;bottom:28%;width:min(64vw, 440px);aspect-ratio:1;border-radius:50%;background:var(--sun);translate:-50% 0}
 .lgr{position:absolute;left:0;right:0;bottom:0;height:30%;width:100%;display:block}
