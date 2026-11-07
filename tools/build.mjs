@@ -42,9 +42,19 @@ const files = {
   'sw.js': read(SRC, 'sw.js'),
 };
 
-// A new version on every change, so browsers and the service worker never mix old and new files.
-const fingerprint = Object.values(files).join('') + read(ROOT, 'assets/fonts/fonts.css');
-const version = crypto.createHash('sha256').update(fingerprint).digest('hex').slice(0, 8);
+// A new version on every change, pictures included, so browsers and the service worker never mix old and new files.
+// Git can give text files different line endings per machine, so those are normalised to keep the version the same everywhere.
+const walk = dir => fs.readdirSync(dir, { withFileTypes: true })
+  .sort((a, b) => (a.name < b.name ? -1 : 1))
+  .flatMap(entry => (entry.isDirectory() ? walk(path.join(dir, entry.name)) : [path.join(dir, entry.name)]));
+const hash = crypto.createHash('sha256').update(Object.values(files).join('')).update(read(ROOT, 'site.webmanifest'));
+for (const dir of ['images', 'icons', 'fonts', 'vendor']) {
+  for (const file of walk(path.join(ROOT, 'assets', dir))) {
+    hash.update(path.relative(ROOT, file).replaceAll('\\', '/'));
+    hash.update(/\.(css|js|svg|txt)$/.test(file) ? read(file) : fs.readFileSync(file));
+  }
+}
+const version = hash.digest('hex').slice(0, 8);
 
 const NOTE = 'Built by tools/build.mjs from src/. Edit src/, not this file.';
 for (const [file, text] of Object.entries(files)) {
